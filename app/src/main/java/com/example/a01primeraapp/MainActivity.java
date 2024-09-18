@@ -1,5 +1,6 @@
 package com.example.a01primeraapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // ESTABLECER UN CALLBACK DESDE CÓDIGO
+
         Button changeToImage = findViewById(R.id.button_homeToActivityImage);
 
         // EL evento onClickListener nos vale para decir qué evento va a ocurrir cuando pulsemos el botón
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Pulsado!", Toast.LENGTH_SHORT).show();
             Log.d("debug","OKEY");
+            startActivity(new Intent(MainActivity.this, imageActivity.class));
             }
         });
     }
