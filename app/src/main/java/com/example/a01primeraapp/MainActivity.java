@@ -2,6 +2,7 @@ package com.example.a01primeraapp;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
@@ -63,12 +64,28 @@ public class MainActivity extends AppCompatActivity {
         values.put("name", nameString);
 
         // Hacemos un insert con los datos pasandole la varible value que tenemos completada arriba
-        db.insert("personas", null, values);
-        
-        /*Sacamos un mensaje pop-up por pantalla con Toast.makeText
-        En esta funcion le pasamos en qué layout estamos, el mensaje que queremos que se muestre y el tiempo que queremos que esté el mensaje en pantalla*/
-        Toast.makeText(MainActivity.this, "El nombre " + nameString + " ha sido añadido a la BBDD!", Toast.LENGTH_LONG).show();
+        long result = db.insert("personas", null, values);
 
+        /*Sacamos un mensaje pop-up por pantalla con Toast.makeText para decirle al usuario si se ha realizado la inserción con éxito
+        En esta funcion le pasamos en qué layout estamos, el mensaje que queremos que se muestre y el tiempo que queremos que esté el mensaje en pantalla*/
+        //Meteremos un control de errores
+
+        if (result >= 0) {
+            Toast.makeText(MainActivity.this, "El nombre " + nameString + " ha sido añadido a la BBDD!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(MainActivity.this, "ERROR AL INSERTAR", Toast.LENGTH_LONG).show();
+
+        }
+    }
+    public void readFromSQL (View view) {
+        SQLiteDatabase db = dbAux.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM personas WHERE id = 1", null);
+        // Si puedo mover el cursor al principio significa que no ha habido errores, es decir, que ha encontrado datos
+        if (cursor.moveToFirst()) {
+            int columnIndex = cursor.getColumnIndex("name");
+            String rowName = cursor.getString(columnIndex);
+            Toast.makeText(MainActivity.this, "El nombre de la fila  es: " + rowName, Toast.LENGTH_LONG).show();
+        }
 
     }
 }
