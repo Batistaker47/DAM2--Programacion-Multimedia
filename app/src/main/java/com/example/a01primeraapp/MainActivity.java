@@ -77,13 +77,18 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+    // Este método nos permite leer información contenida en la BBDD de nuestro emulador
     public void readFromSQL (View view) {
         SQLiteDatabase db = dbAux.getReadableDatabase();
+        // Para hacer un SELECT, se utiliza el método rawQuery, al que le pasamos la query a pelo
         Cursor cursor = db.rawQuery("SELECT * FROM personas WHERE id = 1", null);
         // Si puedo mover el cursor al principio significa que no ha habido errores, es decir, que ha encontrado datos
         if (cursor.moveToFirst()) {
+            // Esto significa que no ha saltado ningún error, por lo que entramos en el if y guardamos en una variable int el índice de la columna que queramos sacar la info, en este caso del nombre
             int columnIndex = cursor.getColumnIndex("name");
+            // Para sacar el texto contenido en dicha columna, utilizamos la función getString, a la que le pasamos el índice
             String rowName = cursor.getString(columnIndex);
+            // Mostramos el String leído con un toast
             Toast.makeText(MainActivity.this, "El nombre de la fila  es: " + rowName, Toast.LENGTH_LONG).show();
         }
 
