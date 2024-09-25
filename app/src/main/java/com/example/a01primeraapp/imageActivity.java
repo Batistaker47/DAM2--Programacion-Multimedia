@@ -2,9 +2,12 @@ package com.example.a01primeraapp;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,5 +37,6 @@ public class imageActivity extends AppCompatActivity {
     public void changeBGColor(View view) {
         ConstraintLayout layout = findViewById(R.id.main);
         layout.setBackgroundColor(Color.BLACK);
+
     }
 }
