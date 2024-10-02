@@ -1,6 +1,7 @@
 package com.example.a01primeraapp;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -37,6 +38,5 @@ public class imageActivity extends AppCompatActivity {
     public void changeBGColor(View view) {
         ConstraintLayout layout = findViewById(R.id.main);
         layout.setBackgroundColor(Color.BLACK);
-
     }
 }

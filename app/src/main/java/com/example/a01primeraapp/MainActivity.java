@@ -89,8 +89,12 @@ public class MainActivity extends AppCompatActivity {
             // Para sacar el texto contenido en dicha columna, utilizamos la función getString, a la que le pasamos el índice
             String rowName = cursor.getString(columnIndex);
             // Mostramos el String leído con un toast
-            Toast.makeText(MainActivity.this, "El nombre de la fila  es: " + rowName, Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "El nombre de la fila 1 es: " + rowName, Toast.LENGTH_LONG).show();
         }
 
+    }
+
+    public void changeToInfoView(View view) {
+        startActivity(new Intent (MainActivity.this, ShowDatabase.class));
     }
 }
