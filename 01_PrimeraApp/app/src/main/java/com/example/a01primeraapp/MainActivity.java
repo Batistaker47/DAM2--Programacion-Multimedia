@@ -12,10 +12,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     //Creamos una variable DataBaseAux, y la inicializamos más abajo
@@ -96,5 +104,36 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeToInfoView(View view) {
         startActivity(new Intent (MainActivity.this, ShowDatabase.class));
+    }
+
+    public void addToFirebase_DB(View view) {
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        Map<String, Object> values = new HashMap<>();
+        TextView username = findViewById(R.id.nameTextView);
+        TextView email = findViewById(R.id.mailTextView);
+        TextView password = findViewById(R.id.passwordTextView);
+        TextView nickname = findViewById(R.id.nicknameTextView);
+
+        values.put("userame",username.getText().toString());
+        values.put("email",email.getText().toString());
+        values.put("password",password.getText().toString());
+
+        // Añadir nuevo documento (habría que hacer un control de errores para comporbar si ya existe)
+        database.collection("users").document(nickname.getText().toString())
+                .set(values)
+                //
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(MainActivity.this,"Todo Ok",Toast.LENGTH_LONG).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(MainActivity.this,"ERROR",Toast.LENGTH_LONG).show();
+
+                    }
+                });
     }
 }

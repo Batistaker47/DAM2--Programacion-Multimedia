@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "824216350410",
+    "project_id": "primera-app-e80fa",
+    "storage_bucket": "primera-app-e80fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824216350410:android:845ac1c74437e9dfd1ce33",
+        "android_client_info": {
+          "package_name": "com.example.a01primeraapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCxV_SpFbn_HOEgeWiay0ZWVnfSwDo9m8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
