@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "416760230611",
+    "project_id": "legoapp-1c443",
+    "storage_bucket": "legoapp-1c443.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416760230611:android:c1b9d057f0b62d0fb31a26",
+        "android_client_info": {
+          "package_name": "com.example.legoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzNSwqQvoySS_DN184cDU43RNmIc6ygfQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
