@@ -39,8 +39,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="242dp"
-        android:layout_height="187dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/glLogInPhotoDown"
         app:layout_constraintEnd_toStartOf="@+id/glLogInPhotoRight"
         app:layout_constraintStart_toStartOf="@+id/glLogInPhotoLeft"
@@ -91,8 +91,8 @@
 
     <TextView
         android:id="@+id/tvUserTitle"
-        android:layout_width="72dp"
-        android:layout_height="31dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="User"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
@@ -111,7 +111,7 @@
 
     <EditText
         android:id="@+id/editTextUser"
-        android:layout_width="250dp"
+        android:layout_width="288dp"
         android:layout_height="45dp"
         android:background="#1B1919"
         android:ems="10"
@@ -121,7 +121,7 @@
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/glPasswordTitleTop"
-        app:layout_constraintEnd_toStartOf="@+id/glLogInPhotoRight"
+        app:layout_constraintEnd_toStartOf="@+id/guideline17"
         app:layout_constraintStart_toStartOf="@+id/glSignInTitlesLeft"
         app:layout_constraintTop_toTopOf="@+id/glUserTitleDown" />
 
@@ -157,11 +157,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.74" />
+        app:layout_constraintGuide_percent="0.71" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="250dp"
+        android:layout_width="286dp"
         android:layout_height="45dp"
         android:layout_marginTop="4dp"
         android:background="#1B1919"
@@ -169,9 +169,11 @@
         android:paddingLeft="10dp"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/glPasswordTextDown"
-        app:layout_constraintEnd_toStartOf="@+id/glLogInPhotoRight"
+        app:layout_constraintEnd_toStartOf="@+id/guideline17"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="@+id/glSignInTitlesLeft"
-        app:layout_constraintTop_toTopOf="@+id/glPasswordTitleDown" />
+        app:layout_constraintTop_toTopOf="@+id/glPasswordTitleDown"
+        app:layout_constraintVertical_bias="0.515" />
 
     <Button
         android:id="@+id/buttonLogIn"
@@ -186,7 +188,6 @@
         app:cornerRadius="10px"
         app:layout_constraintBottom_toTopOf="@+id/glButtonSigInDown"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/glPasswordTextDown" />
 
@@ -196,5 +197,53 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85499316" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="123dp"
+        android:layout_height="24dp"
+        android:text="Forgot Password?"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintEnd_toStartOf="@+id/glSignInTitleRight"
+        app:layout_constraintStart_toStartOf="@+id/glSignInTitlesLeft"
+        app:layout_constraintTop_toTopOf="@+id/guideline15" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="142dp"
+        android:layout_height="25dp"
+        android:onClick="changeToRegisterView"
+        android:text="New here? Sign Up!"
+        android:textAlignment="viewEnd"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintEnd_toStartOf="@+id/guideline17"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/glSignInTitleRight"
+        app:layout_constraintTop_toTopOf="@+id/guideline15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

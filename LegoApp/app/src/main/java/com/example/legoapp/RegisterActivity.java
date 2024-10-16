@@ -11,25 +11,22 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class LogInActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
     }
-    public void changeToRegisterView(View view) {
-        startActivity(new Intent(LogInActivity.this, RegisterActivity.class));
-    }
-
-    public void changeToMainView(View view) {
-        startActivity(new Intent(LogInActivity.this, RegisterActivity.class));
+    public void changeView(View view) {
+        startActivity(new Intent(RegisterActivity.this, MainPageActivity.class));
         Toast.makeText(this, "Welcome User", Toast.LENGTH_LONG).show();
     }
+
 }
