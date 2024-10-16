@@ -161,7 +161,7 @@
 
     <EditText
         android:id="@+id/editTextTextPassword"
-        android:layout_width="286dp"
+        android:layout_width="288dp"
         android:layout_height="45dp"
         android:layout_marginTop="4dp"
         android:background="#1B1919"
@@ -187,8 +187,8 @@
         android:textStyle="bold"
         app:cornerRadius="10px"
         app:layout_constraintBottom_toTopOf="@+id/glButtonSigInDown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline17"
+        app:layout_constraintStart_toStartOf="@+id/glSignInTitlesLeft"
         app:layout_constraintTop_toTopOf="@+id/glPasswordTextDown" />
 
     <androidx.constraintlayout.widget.Guideline
