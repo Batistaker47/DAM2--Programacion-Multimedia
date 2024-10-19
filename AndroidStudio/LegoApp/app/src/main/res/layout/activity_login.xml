@@ -159,7 +159,7 @@
         android:layout_width="260dp"
         android:layout_height="51dp"
         android:backgroundTint="#FFCF00"
-        android:onClick="changeToMainView"
+        android:onClick="logIn"
         android:text="Sign In"
         android:textColor="#000000"
         android:textStyle="bold"

@@ -37,38 +37,52 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
     }
 
-    public void addToFirebase_DB(View view) {
+    //ADD TO FIREBASE DDBB
+    public void signUp(View view) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         Map<String, Object> values = new HashMap<>();
+        TextView nickname = findViewById(R.id.editTextNicknameReg);
         TextView email = findViewById(R.id.editTextEmailRegister);
         TextView password = findViewById(R.id.editTextPasswordReg);
-        TextView nickname = findViewById(R.id.editTextNickname);
+        TextView confPassword = findViewById(R.id.editTextConfPasswordReg);
 
+
+        // CONTROL DE ERRORES DE CAMPOS VACÍOS
+        if (email.getText().toString().isEmpty() || password.getText().toString().isEmpty() || nickname.getText().toString().isEmpty()) {
+            Toast.makeText(RegisterActivity.this, "Complete all the fields", Toast.LENGTH_LONG).show();
+
+            // CONTROL DE ERRORES DE CONTRASEÑAS DISTINTAS
+        } else if (!password.getText().toString().equals(confPassword.getText().toString())) {
+            Toast.makeText(RegisterActivity.this, "Password do not match", Toast.LENGTH_LONG).show();
+
+            //SI VA BIEN -->
+        } else {
         values.put("email",email.getText().toString());
         values.put("password",password.getText().toString());
 
-        // Añadir nuevo documento (habría que hacer un control de errores para comporbar si ya existe)
-        database.collection("users").document(nickname.getText().toString())
-                .set(values)
-                //
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(RegisterActivity.this,"New User Registered!",Toast.LENGTH_LONG).show();
-                        changeMainView();
-                    }
+            // Añadir nuevo documento (habría que hacer un control de errores para comporbar si ya existe)
+            database.collection("users").document(nickname.getText().toString())
+                    .set(values)
+                    //
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(RegisterActivity.this,"New user created",Toast.LENGTH_LONG).show();
+                            changeMainView();
+                        }
 
-                    private void changeMainView() {
-                        startActivity(new Intent(RegisterActivity.this, MainPageActivity.class));
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(RegisterActivity.this,"ERROR",Toast.LENGTH_LONG).show();
+                        private void changeMainView() {
+                            startActivity(new Intent(RegisterActivity.this, MainPageActivity.class));
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(RegisterActivity.this, "ERROR", Toast.LENGTH_LONG).show();
 
-                    }
-                });
+                        }
+                    });
+        }
     }
 
 }
