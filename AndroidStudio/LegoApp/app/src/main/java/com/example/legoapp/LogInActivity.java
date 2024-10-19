@@ -29,7 +29,7 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     public void changeToMainView(View view) {
-        startActivity(new Intent(LogInActivity.this, RegisterActivity.class));
+        startActivity(new Intent(LogInActivity.this, MainPageActivity.class));
         Toast.makeText(this, "Welcome User", Toast.LENGTH_LONG).show();
     }
 }

@@ -51,7 +51,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.83" />
+        app:layout_constraintGuide_percent="0.84
+" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
@@ -61,7 +62,7 @@
         app:layout_constraintGuide_percent="0.2" />
 
     <TextView
-        android:id="@+id/tvUserNickname"
+        android:id="@+id/tvUserNicknameReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nickname"
@@ -177,10 +178,8 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/guideline12"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/guideline12" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline13"
@@ -234,15 +233,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.26" />
+        app:layout_constraintGuide_percent="0.25" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSignUp"
         android:layout_width="260dp"
         android:layout_height="51dp"
         android:backgroundTint="#FFCF00"
         android:onClick="addToFirebase_DB"
-        android:text="Sign up"
+        android:text="Create account"
         android:textColor="#000000"
         android:textStyle="bold"
         app:cornerRadius="10px"
@@ -266,11 +265,11 @@
         app:layout_constraintGuide_percent="0.24" />
 
     <TextView
-        android:id="@+id/tvgoSignIn"
+        android:id="@+id/SignInLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="changeLogInView"
-        android:text="Already registered? Sig in -->"
+        android:text="Already registered? Sign in -->"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline27"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"

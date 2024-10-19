@@ -10,240 +10,227 @@
     tools:context=".LogInActivity">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glLogInPhotoUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.07" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glLogInPhotoDown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.34" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glLogInPhotoLeft"
+        android:id="@+id/guideline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.16" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glLogInPhotoRight"
+        android:id="@+id/guideline14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/glLogInPhotoDown"
-        app:layout_constraintEnd_toStartOf="@+id/glLogInPhotoRight"
-        app:layout_constraintStart_toStartOf="@+id/glLogInPhotoLeft"
-        app:layout_constraintTop_toTopOf="@+id/glLogInPhotoUp"
-        app:srcCompat="@drawable/logolegoapp" />
-
-    <TextView
-        android:id="@+id/tvSignInTitle"
-        android:layout_width="138dp"
-        android:layout_height="60dp"
-        android:text="Sign In"
-        android:textAlignment="inherit"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/glSignInTitleDown"
-        app:layout_constraintEnd_toStartOf="@+id/glSignInTitleRight"
-        app:layout_constraintStart_toStartOf="@+id/glSignInTitlesLeft"
-        app:layout_constraintTop_toTopOf="@+id/glLogInPhotoDown" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glSignInTitlesLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.12" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glSignInTitleRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.47" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glSignInTitleDown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.42818058" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glUserTitleDown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.48" />
-
-    <TextView
-        android:id="@+id/tvUserTitle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="User"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/glUserTitleDown"
-        app:layout_constraintEnd_toStartOf="@+id/glUserTitleRight"
-        app:layout_constraintStart_toStartOf="@+id/glSignInTitlesLeft"
-        app:layout_constraintTop_toTopOf="@+id/glSignInTitleDown" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glUserTitleRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.32360098" />
-
-    <EditText
-        android:id="@+id/editTextUser"
-        android:layout_width="288dp"
-        android:layout_height="45dp"
-        android:background="#1B1919"
-        android:ems="10"
-        android:inputType="text"
-        android:paddingLeft="10dp"
-        android:text=""
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/glPasswordTitleTop"
-        app:layout_constraintEnd_toStartOf="@+id/guideline17"
-        app:layout_constraintStart_toStartOf="@+id/glSignInTitlesLeft"
-        app:layout_constraintTop_toTopOf="@+id/glUserTitleDown" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glPasswordTitleTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5731874" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glPasswordTitleDown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.627907" />
-
-    <TextView
-        android:id="@+id/tvPasswordTitle"
-        android:layout_width="75dp"
-        android:layout_height="30dp"
-        android:text="Password"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/glPasswordTitleDown"
-        app:layout_constraintEnd_toStartOf="@+id/glUserTitleRight"
-        app:layout_constraintStart_toStartOf="@+id/glSignInTitlesLeft"
-        app:layout_constraintTop_toTopOf="@+id/glPasswordTitleTop" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glPasswordTextDown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.71" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="288dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="4dp"
-        android:background="#1B1919"
-        android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/glPasswordTextDown"
-        app:layout_constraintEnd_toStartOf="@+id/guideline17"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="@+id/glSignInTitlesLeft"
-        app:layout_constraintTop_toTopOf="@+id/glPasswordTitleDown"
-        app:layout_constraintVertical_bias="0.515" />
-
-    <Button
-        android:id="@+id/buttonLogIn"
-        android:layout_width="274dp"
-        android:layout_height="51dp"
-        android:backgroundTint="#FFCF00"
-        android:onClick="changeToMainView"
-        android:text="Sign in"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:cornerRadius="10px"
-        app:layout_constraintBottom_toTopOf="@+id/glButtonSigInDown"
-        app:layout_constraintEnd_toStartOf="@+id/guideline17"
-        app:layout_constraintStart_toStartOf="@+id/glSignInTitlesLeft"
-        app:layout_constraintTop_toTopOf="@+id/glPasswordTextDown" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/glButtonSigInDown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.85499316" />
+        app:layout_constraintGuide_percent="0.84" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.33" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
+        app:layout_constraintGuide_percent="0.59" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="123dp"
-        android:layout_height="24dp"
-        android:text="Forgot Password?"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline16"
-        app:layout_constraintEnd_toStartOf="@+id/glSignInTitleRight"
-        app:layout_constraintStart_toStartOf="@+id/glSignInTitlesLeft"
-        app:layout_constraintTop_toTopOf="@+id/guideline15" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="142dp"
-        android:layout_height="25dp"
-        android:onClick="changeToRegisterView"
-        android:text="New here? Sign Up!"
-        android:textAlignment="viewEnd"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline16"
-        app:layout_constraintEnd_toStartOf="@+id/guideline17"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="@+id/glSignInTitleRight"
-        app:layout_constraintTop_toTopOf="@+id/guideline15" />
+    <ImageView
+        android:id="@+id/imageViewSignIn"
+        android:layout_width="245dp"
+        android:layout_height="262dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline18"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logolegoapp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.52" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <TextView
+        android:id="@+id/tvSignInTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline17"
+        app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/guideline18" />
+
+    <TextView
+        android:id="@+id/tvUserNicknameLogIn"
+        android:layout_width="64dp"
+        android:layout_height="19dp"
+        android:text="Nickname"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline16"
+        app:layout_constraintEnd_toStartOf="@+id/guideline19"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/guideline17" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.315" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <EditText
+        android:id="@+id/editTextNicknameSignIn"
+        android:layout_width="274dp"
+        android:layout_height="45dp"
+        android:background="#1B1919"
+        android:ems="10"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline25"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/guideline16" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.71" />
+
+    <TextView
+        android:id="@+id/tvUserPassLogIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline26"
+        app:layout_constraintEnd_toStartOf="@+id/guideline19"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/guideline25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.77" />
+
+    <EditText
+        android:id="@+id/editTextPasswordSignIn"
+        android:layout_width="274dp"
+        android:layout_height="45dp"
+        android:background="#1B1919"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline28"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/guideline26" />
+
+    <Button
+        android:id="@+id/buttonSignIn"
+        android:layout_width="260dp"
+        android:layout_height="51dp"
+        android:backgroundTint="#FFCF00"
+        android:onClick="changeToMainView"
+        android:text="Sign In"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:cornerRadius="10px"
+        app:layout_constraintBottom_toTopOf="@+id/guideline29"
+        app:layout_constraintEnd_toStartOf="@+id/guideline14"
+        app:layout_constraintStart_toStartOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@+id/guideline28" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.87" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.185" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.814" />
+
+    <TextView
+        android:id="@+id/ForgotPasswordLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline30"
+        app:layout_constraintEnd_toStartOf="@+id/guideline33"
+        app:layout_constraintStart_toStartOf="@+id/guideline31"
+        app:layout_constraintTop_toTopOf="@+id/guideline29" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.46" />
+
+    <TextView
+        android:id="@+id/SignUpLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="changeToRegisterView"
+        android:text="Sign up with us!"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline30"
+        app:layout_constraintEnd_toStartOf="@+id/guideline32"
+        app:layout_constraintStart_toStartOf="@+id/guideline34"
+        app:layout_constraintTop_toTopOf="@+id/guideline29" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.577" />
 </androidx.constraintlayout.widget.ConstraintLayout>
