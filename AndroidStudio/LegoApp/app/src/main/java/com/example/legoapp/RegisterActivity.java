@@ -68,10 +68,6 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(Void unused) {
                             Toast.makeText(RegisterActivity.this,"New user created",Toast.LENGTH_LONG).show();
-                            changeMainView();
-                        }
-
-                        private void changeMainView() {
                             startActivity(new Intent(RegisterActivity.this, MainPageActivity.class));
                         }
                     })
