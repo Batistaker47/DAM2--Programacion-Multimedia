@@ -57,8 +57,9 @@ public class RegisterActivity extends AppCompatActivity {
 
             //SI VA BIEN -->
         } else {
-        values.put("email",email.getText().toString());
-        values.put("password",password.getText().toString());
+            values.put("nickname",nickname.getText().toString());
+            values.put("email",email.getText().toString());
+            values.put("password",password.getText().toString());
 
             // Añadir nuevo documento (habría que hacer un control de errores para comporbar si ya existe)
             database.collection("users").document(nickname.getText().toString())
