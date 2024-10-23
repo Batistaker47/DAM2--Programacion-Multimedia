@@ -91,23 +91,6 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                         }
                     });
-/*
-                    //.set(values)
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-
-                            Toast.makeText(RegisterActivity.this,"New user created",Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(RegisterActivity.this, MainPageActivity.class));
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(RegisterActivity.this, "ERROR", Toast.LENGTH_LONG).show();
-
-                        }
-                    });*/
         }
     }
 
