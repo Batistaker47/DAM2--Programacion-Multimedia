@@ -13,9 +13,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -61,13 +63,40 @@ public class RegisterActivity extends AppCompatActivity {
             values.put("email",email.getText().toString());
             values.put("password",password.getText().toString());
 
-            // Añadir nuevo documento (habría que hacer un control de errores para comporbar si ya existe)
-            database.collection("users").document(nickname.getText().toString())
-                    .set(values)
-                    //
+            database.collection("users")
+                    .get()
+                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                            if (task.isSuccessful()) {
+                                // Me traigo bien los datos, va bien el internet
+                                // Por cada documento en el task (todos los datos del documento)
+                                boolean userCheck = false;
+                                for (QueryDocumentSnapshot doc : task.getResult()) {
+                                    if (doc.getId().equals(nickname.getText().toString())) {
+                                        // Si existe
+                                        userCheck = true;
+                                        Toast.makeText(RegisterActivity.this,"User already exist",Toast.LENGTH_LONG).show();
+                                        break;
+                                    }
+                                }
+
+                                if (!userCheck) {
+                                        Toast.makeText(RegisterActivity.this,"User Created",Toast.LENGTH_LONG).show();
+                                        database.collection("users").document(nickname.getText().toString()).set(values);
+                                        startActivity(new Intent(RegisterActivity.this, MainPageActivity.class));
+                                }
+                            } else {
+                                //No va el internet/bbdd caída (no me traigo datos)
+                            }
+                        }
+                    });
+/*
+                    //.set(values)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
+
                             Toast.makeText(RegisterActivity.this,"New user created",Toast.LENGTH_LONG).show();
                             startActivity(new Intent(RegisterActivity.this, MainPageActivity.class));
                         }
@@ -78,7 +107,7 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(RegisterActivity.this, "ERROR", Toast.LENGTH_LONG).show();
 
                         }
-                    });
+                    });*/
         }
     }
 
