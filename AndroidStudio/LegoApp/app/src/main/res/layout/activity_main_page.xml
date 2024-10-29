@@ -31,8 +31,10 @@
         android:layout_height="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline58"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ffcf00" />
 
     <ImageView
@@ -179,5 +181,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.91" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="62dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline51"
+        app:layout_constraintStart_toStartOf="@+id/guideline55"
+        app:layout_constraintTop_toTopOf="@+id/guideline58"
+        app:srcCompat="@drawable/e7d450d8c31ae10aa663d082fdbb3db9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
