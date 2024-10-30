@@ -9,6 +9,7 @@ public class StickMovement : MonoBehaviour
     public float speed;
     private Rigidbody2D rb2d;
     private float y;
+    public string axisName;
 
     // Start is called before the first frame update.
     // Este método es virtual, lo que significa que lo heredamos de monoBehaviour vacío, y lo rellenaremos con lo que necesitemos
@@ -21,7 +22,7 @@ public class StickMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        y = Input.GetAxis("Vertical");
+        y = Input.GetAxis(axisName);
         transform.Translate(new Vector2 (0,y) * speed * Time.deltaTime);
         //Esto sería para que al chocar la bola con la pala no nos la mueva en el eje Y
     }

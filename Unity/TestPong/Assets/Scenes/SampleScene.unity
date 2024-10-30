@@ -433,6 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  axisName: Vertical
 --- !u!1 &851671743
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  axisName: VerticalKey
 --- !u!61 &851671745
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -795,7 +797,7 @@ GameObject:
   - component: {fileID: 1203547914}
   - component: {fileID: 1203547916}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
