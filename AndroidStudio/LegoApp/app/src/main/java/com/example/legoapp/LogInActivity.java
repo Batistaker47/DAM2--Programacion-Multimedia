@@ -1,8 +1,6 @@
 package com.example.legoapp;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -63,7 +61,7 @@ public class LogInActivity extends AppCompatActivity {
                                         // Si existe y la contraseña coincide
                                         String email = doc.get("email").toString();
                                         userCheck = true;
-                                        createLocalRegistry(email,nickname.getText().toString(),password.getText().toString());
+                                        //createLocalRegistry(email,nickname.getText().toString(),password.getText().toString());
                                         Toast.makeText(LogInActivity.this, "Welcome back, " + nickname.getText().toString() + "!", Toast.LENGTH_LONG).show();
                                         startActivity(new Intent(LogInActivity.this, MainPageActivity.class));
                                         break;
@@ -79,28 +77,6 @@ public class LogInActivity extends AppCompatActivity {
                         }
                     });
             }
-    }
-
-    private void createLocalRegistry(String email, String nickname, String password) {
-        if(email == null || nickname == null ||password == null)
-            return;
-        DataBaseAux dbAux = new DataBaseAux(this);
-        SQLiteDatabase db = dbAux.getWritableDatabase();
-        db.execSQL("INSERT INTO users VALUES (" + email + "," + nickname + "," + password + ")");
-    }
-
-    private boolean checkLocalDatabase() {
-        DataBaseAux dbAux = new DataBaseAux(this);
-        SQLiteDatabase db = dbAux.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM users", null);
-        if (cursor.moveToFirst()) {
-            String email = cursor.getString(1);
-            String nickname = cursor.getString(2);
-            String password = cursor.getString(3);
-            return true;
-        }
-
-        return false;
     }
 
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="content_padding">16dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+
+    <!-- Product card specific dimensions -->
+    <dimen name="product_card_width">157dp</dimen>
+    <dimen name="product_card_height">240dp</dimen>
+    <dimen name="product_card_margin">16dp</dimen>
+
+    <dimen name="product_image_height">168dp</dimen>
+
+    <dimen name="discount_banner_text_size">16sp</dimen>
+    <dimen name="product_name_text_size">14sp</dimen>
+    <dimen name="product_new_price_text_size">24sp</dimen>
+    <dimen name="product_old_price_text_size">16sp</dimen>
+    <dimen name="product_review_text_size">12sp</dimen>
+</resources>

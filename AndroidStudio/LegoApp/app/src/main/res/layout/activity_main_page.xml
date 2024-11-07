@@ -109,6 +109,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline52">
 
         <LinearLayout
+            android:id="@+id/legoContainer"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical" />
