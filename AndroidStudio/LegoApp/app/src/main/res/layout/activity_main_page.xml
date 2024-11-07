@@ -5,6 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:backgroundTint="#ffffff"
     tools:context=".MainPageActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -101,8 +103,10 @@
         app:layout_constraintGuide_percent="0.22" />
 
     <HorizontalScrollView
-        android:layout_width="398dp"
-        android:layout_height="182dp"
+        android:layout_width="401dp"
+        android:layout_height="219dp"
+        android:background="#ffffff"
+        android:backgroundTint="#ffffff"
         app:layout_constraintBottom_toTopOf="@+id/guideline53"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,7 +116,7 @@
             android:id="@+id/legoContainer"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical" />
+            android:orientation="horizontal" />
     </HorizontalScrollView>
 
     <androidx.constraintlayout.widget.Guideline
@@ -120,14 +124,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.50" />
+        app:layout_constraintGuide_percent="0.54" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline54"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
+        app:layout_constraintGuide_percent="0.59" />
 
     <TextView
         android:id="@+id/tvRetiredSets"
@@ -156,8 +160,10 @@
         app:layout_constraintGuide_percent="0.28710464" />
 
     <HorizontalScrollView
-        android:layout_width="398dp"
-        android:layout_height="182dp"
+        android:layout_width="401dp"
+        android:layout_height="219dp"
+        android:background="#ffffff"
+        android:backgroundTint="#ffffff"
         app:layout_constraintBottom_toTopOf="@+id/guideline57"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -165,8 +171,8 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
     </HorizontalScrollView>
 
     <androidx.constraintlayout.widget.Guideline
@@ -174,7 +180,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.83" />
+        app:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline58"

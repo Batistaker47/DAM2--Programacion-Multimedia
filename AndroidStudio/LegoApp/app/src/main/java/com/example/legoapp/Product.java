@@ -5,7 +5,6 @@ public class Product
     String name;
     int pieces;
     double prize;
-
     String image;
 
     public Product(String name, int pieces, double prize, String image) {
@@ -13,6 +12,10 @@ public class Product
         this.pieces = pieces;
         this.prize = prize;
         this.image = image;
+    }
+
+    public Product() {
+
     }
 
     public String getName() {

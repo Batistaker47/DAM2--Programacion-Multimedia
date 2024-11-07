@@ -16,7 +16,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainPageActivity extends AppCompatActivity {
@@ -27,6 +30,28 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
          setContentView(R.layout.activity_main_page);
+
+        legoContainer = findViewById(R.id.legoContainer);
+
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        database.collection("sets/categories/Star Wars")
+                .get()
+                .addOnCompleteListener(task ->  {
+                        if(task.isSuccessful()) {
+                            List<DocumentSnapshot> documents = task.getResult().getDocuments();
+                            List<Product> sets = new ArrayList<>();
+                            for (DocumentSnapshot document : documents) {
+                                Product set = document.toObject(Product.class);
+                                if (set != null) {
+                                    //Log.d("Prize set", set.getName());
+                                    sets.add(set);
+                                }
+                            }
+                            loadNewSets(sets);
+                        }
+
+                });
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
