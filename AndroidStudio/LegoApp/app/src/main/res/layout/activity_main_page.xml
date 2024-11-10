@@ -113,7 +113,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline52">
 
         <LinearLayout
-            android:id="@+id/legoContainer"
+            android:id="@+id/legoContainerNew"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal" />
@@ -170,6 +170,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline54">
 
         <LinearLayout
+            android:id="@+id/legoContainerRetired"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal" />

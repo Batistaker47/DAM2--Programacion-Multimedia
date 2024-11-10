@@ -7,11 +7,22 @@ public class Product
     double prize;
     String image;
 
-    public Product(String name, int pieces, double prize, String image) {
+    String description;
+
+    public Product(String name, int pieces, double prize, String image, String description) {
         this.name = name;
         this.pieces = pieces;
         this.prize = prize;
         this.image = image;
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Product() {
