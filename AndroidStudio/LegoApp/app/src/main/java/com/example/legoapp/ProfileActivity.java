@@ -29,7 +29,6 @@ public class ProfileActivity extends AppCompatActivity {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            changeProfileName(ProfileActivity.this.getCurrentFocus());
             return insets;
         });
     }
@@ -42,25 +41,5 @@ public class ProfileActivity extends AppCompatActivity {
     public void changeMainPageView(View view) {
         startActivity(new Intent(ProfileActivity.this, MainPageActivity.class));
 
-    }
-    public void changeProfileName(View view) {
-        TextView tvProfileUserName = findViewById(R.id.tvProfileUserName);
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-        database.collection("users")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        for (QueryDocumentSnapshot doc : task.getResult()) {
-                            String savedUser = doc.getId();
-                            if (doc.getId().equals("Sonia1234")) {
-                                tvProfileUserName.setText(savedUser);
-                            } else {
-                                tvProfileUserName.setText("FUNCIONA");
-                            };
-                        }
-
-                    }
-                });
     }
 }
