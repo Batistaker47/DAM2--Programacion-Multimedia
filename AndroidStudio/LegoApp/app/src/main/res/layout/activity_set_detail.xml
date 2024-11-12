@@ -31,24 +31,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.124087594" />
+        app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline65"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8783455" />
+        app:layout_constraintGuide_percent="0.92" />
 
-    <TextView
-        android:id="@+id/tvSetDescriptionDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:justificationMode="inter_word"
-        app:layout_constraintEnd_toStartOf="@+id/guideline65"
-        app:layout_constraintStart_toStartOf="@+id/guideline64"
-        app:layout_constraintTop_toTopOf="@+id/guideline66" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline66"
@@ -61,10 +52,15 @@
         android:id="@+id/buttonAddSetToInventory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FFCF00"
         android:text="Add set"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline65"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/guideline64"
-        app:layout_constraintTop_toBottomOf="@+id/tvSetDescriptionDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/tvSetDescriptionDetail"
+        app:layout_constraintVertical_bias="0.44" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline68"
@@ -88,5 +84,18 @@
         android:text="TextView"
         app:layout_constraintEnd_toStartOf="@+id/guideline65"
         app:layout_constraintTop_toTopOf="@+id/guideline68" />
+
+    <TextView
+        android:id="@+id/tvSetDescriptionDetail"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toStartOf="@+id/guideline65"
+        app:layout_constraintStart_toStartOf="@+id/guideline64"
+        app:layout_constraintTop_toTopOf="@+id/guideline66" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
