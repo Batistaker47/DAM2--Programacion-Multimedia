@@ -7,13 +7,15 @@
     android:layout_height="wrap_content"
     android:id="@+id/main"
     android:orientation="vertical"
-    android:layout_marginTop="40dp"
+    android:layout_marginTop="10dp"
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
         android:orientation="vertical">
 
         <ImageView
@@ -23,38 +25,42 @@
             app:srcCompat="@drawable/flecha_izquierda">
 
         </ImageView>
+
         <ImageView
             android:id="@+id/imageSetDetail"
             android:layout_width="match_parent"
             android:layout_height="260dp"
-            android:scaleType="fitCenter"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            android:scaleType="fitCenter" />
+
         <TextView
             android:id="@+id/tvSetNameDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
             android:text="Nombre set"
             android:textAlignment="viewStart"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp"
-            android:textSize="20sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
         <TextView
             android:id="@+id/tvSetPrizeDetail"
             android:layout_width="95dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
-            android:textSize="16sp"
             android:text="PRECIO"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
         <TextView
             android:id="@+id/tvSetPiecesDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp" />
+            android:text="TextView" />
 
         <ScrollView
             android:id="@+id/ScrollDescriptionDetail"
@@ -77,29 +83,35 @@
 
             </LinearLayout>
         </ScrollView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/buttonAddSetToInventory"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#FFCF00"
+                android:text="Add to inventory"
+                android:textColor="@color/black"
+                android:textStyle="bold">
 
-        <Button
-            android:id="@+id/buttonAddSetToInventory"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFCF00"
-            android:text="Add to inventory"
-            android:textColor="@color/black"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="115dp"
-            android:textStyle="bold">
-        </Button>
-        <Button
-            android:id="@+id/buttonAddSetToWishlist"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFCF00"
-            android:text="Add to wishlist"
-            android:textColor="@color/black"
-            android:layout_marginBottom="20dp"
-            android:layout_marginStart="120dp"
-            android:textStyle="bold">
-        </Button>
+            </Button>
+
+            <Button
+                android:id="@+id/buttonAddSetToWishlist"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/buttonAddSetToInventory"
+                android:backgroundTint="#FFCF00"
+                android:text="Add to wishlist"
+                android:textColor="@color/black"
+                android:textStyle="bold">
+
+            </Button>
+        </RelativeLayout>
     </LinearLayout>
 
 </ScrollView>
