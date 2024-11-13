@@ -31,7 +31,7 @@ public class SetDetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String setName = intent.getStringExtra("setName");
-        Double setPrice = intent.getDoubleExtra("setPrice",0);
+        Double setPrice = intent.getDoubleExtra("setPrize",0);
         Integer setPieces = intent.getIntExtra("setPieces",0);
         String setImage = intent.getStringExtra("setImage");
         String setDescription = intent.getStringExtra("setDescription");
