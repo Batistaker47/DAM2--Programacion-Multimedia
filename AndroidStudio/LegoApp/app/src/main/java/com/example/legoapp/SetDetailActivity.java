@@ -3,6 +3,7 @@ package com.example.legoapp;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -50,7 +51,11 @@ public class SetDetailActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
     }
 
+    public void changeToMainView(View view) {
+        startActivity(new Intent(SetDetailActivity.this, MainPageActivity.class));
+    }
 
 }

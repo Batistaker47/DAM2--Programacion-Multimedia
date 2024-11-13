@@ -17,6 +17,13 @@
         android:orientation="vertical">
 
         <ImageView
+            android:layout_width="31sp"
+            android:layout_height="34sp"
+            android:onClick="changeToMainView"
+            app:srcCompat="@drawable/flecha_izquierda">
+
+        </ImageView>
+        <ImageView
             android:id="@+id/imageSetDetail"
             android:layout_width="match_parent"
             android:layout_height="260dp"
@@ -47,7 +54,7 @@
             android:layout_height="wrap_content"
             android:text="TextView"
             android:layout_marginTop="10dp"
-            android:layout_marginStar="5dp" />
+            android:layout_marginStart="5dp" />
 
         <ScrollView
             android:id="@+id/ScrollDescriptionDetail"
