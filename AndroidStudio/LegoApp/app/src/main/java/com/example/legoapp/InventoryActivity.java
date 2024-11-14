@@ -112,6 +112,18 @@ public class InventoryActivity extends AppCompatActivity {
             sets_card.setLayoutParams(params);
 
             legoLinearLayout.addView(sets_card);
+            sets_card.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(InventoryActivity.this, SetDetailActivity.class);
+                    Intent name = intent.putExtra("setName", product.getName());
+                    Intent prize = intent.putExtra("setPrize", product.getPrize());
+                    Intent pieces = intent.putExtra("setPieces", product.getPieces());
+                    Intent image = intent.putExtra("setImage", product.getImage());
+                    Intent description = intent.putExtra("setDescription", product.getDescription());
+                    startActivity(intent);
+                }
+            });
         }
     }
 
@@ -143,6 +155,18 @@ public class InventoryActivity extends AppCompatActivity {
             sets_card.setLayoutParams(params);
 
             legoLinearLayout.addView(sets_card);
+            sets_card.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(InventoryActivity.this, SetDetailActivity.class);
+                    Intent name = intent.putExtra("setName", product.getName());
+                    Intent prize = intent.putExtra("setPrize", product.getPrize());
+                    Intent pieces = intent.putExtra("setPieces", product.getPieces());
+                    Intent image = intent.putExtra("setImage", product.getImage());
+                    Intent description = intent.putExtra("setDescription", product.getDescription());
+                    startActivity(intent);
+                }
+            });
         }
     }
 }

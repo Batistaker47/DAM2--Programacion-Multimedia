@@ -12,9 +12,27 @@
 
         <LinearLayout
             android:id="@+id/linearLayoutInventory"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All the sets"
+                android:textSize="30sp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center_horizontal|center_vertical">
+            </TextView>
+            <ImageView
+                android:layout_width="31sp"
+                android:layout_height="34sp"
+                android:src="@drawable/flecha_izquierda"
+                android:layout_gravity="start"
+                android:onClick="changeToMainView">
+            </ImageView>
         </LinearLayout>
     </ScrollView>
 

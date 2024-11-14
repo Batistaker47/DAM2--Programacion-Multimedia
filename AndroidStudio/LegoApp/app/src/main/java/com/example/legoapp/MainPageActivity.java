@@ -51,7 +51,6 @@ public class MainPageActivity extends AppCompatActivity {
                         for (DocumentSnapshot document : documents) {
                             Product set = document.toObject(Product.class);
                             if (set != null) {
-                                //Log.d("Prize set", set.getName());
                                 sets.add(set);
                             }
                         }
@@ -104,9 +103,10 @@ public class MainPageActivity extends AppCompatActivity {
 
         for (Product product : products) {
             View sets_card = inflater.inflate(R.layout.sets_card, legoContainerNew, false);
-            ImageView setImage = sets_card.findViewById(R.id.setImage);
-            TextView setName = sets_card.findViewById(R.id.tvSetName);
-            TextView setPrice = sets_card.findViewById(R.id.tvSetPrice);
+            ImageView setImage = sets_card.findViewById(R.id.set_image);
+            TextView setName = sets_card.findViewById(R.id.set_name);
+            TextView setPrice = sets_card.findViewById(R.id.set_prize);
+            TextView setPieces = sets_card.findViewById(R.id.set_pieces);
 
             Glide.with(this)
                     .load(product.getImage())
@@ -114,6 +114,7 @@ public class MainPageActivity extends AppCompatActivity {
 
             setName.setText(product.getName());
             setPrice.setText(String.format("%.2f €", product.getPrize()));
+            setPieces.setText(String.format(product.getPieces() + ""));
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
@@ -145,9 +146,10 @@ public class MainPageActivity extends AppCompatActivity {
         for (Product product : products) {
             View sets_card = inflater.inflate(R.layout.sets_card, legoContainerRetired, false);
 
-            ImageView setImage = sets_card.findViewById(R.id.setImage);
-            TextView setName = sets_card.findViewById(R.id.tvSetName);
-            TextView setPrice = sets_card.findViewById(R.id.tvSetPrice);
+            ImageView setImage = sets_card.findViewById(R.id.set_image);
+            TextView setName = sets_card.findViewById(R.id.set_name);
+            TextView setPrice = sets_card.findViewById(R.id.set_prize);
+            TextView setPieces = sets_card.findViewById(R.id.set_pieces);
 
             // A partir de aqui se hacen los setters en el horizontal layout
             Glide.with(this)
@@ -156,6 +158,7 @@ public class MainPageActivity extends AppCompatActivity {
 
             setName.setText(product.getName());
             setPrice.setText(String.format("%.2f €", product.getPrize()));
+            setPieces.setText(String.format(product.getPieces() + ""));
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
