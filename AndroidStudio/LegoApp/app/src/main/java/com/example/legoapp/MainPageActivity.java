@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -30,11 +31,12 @@ public class MainPageActivity extends AppCompatActivity {
 
     private LinearLayout legoContainerNew;
     private LinearLayout legoContainerRetired;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-         setContentView(R.layout.activity_main_page);
+        setContentView(R.layout.activity_main_page);
 
         legoContainerNew = findViewById(R.id.legoContainerNew);
         legoContainerRetired = findViewById(R.id.legoContainerRetired);
@@ -42,19 +44,19 @@ public class MainPageActivity extends AppCompatActivity {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection("sets/categories/Star Wars")
                 .get()
-                .addOnCompleteListener(task ->  {
-                        if(task.isSuccessful()) {
-                            List<DocumentSnapshot> documents = task.getResult().getDocuments();
-                            List<Product> sets = new ArrayList<>();
-                            for (DocumentSnapshot document : documents) {
-                                Product set = document.toObject(Product.class);
-                                if (set != null) {
-                                    //Log.d("Prize set", set.getName());
-                                    sets.add(set);
-                                }
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        List<DocumentSnapshot> documents = task.getResult().getDocuments();
+                        List<Product> sets = new ArrayList<>();
+                        for (DocumentSnapshot document : documents) {
+                            Product set = document.toObject(Product.class);
+                            if (set != null) {
+                                //Log.d("Prize set", set.getName());
+                                sets.add(set);
                             }
-                            loadNewSets(sets);
                         }
+                        loadNewSets(sets);
+                    }
 
                 });
 
@@ -65,8 +67,8 @@ public class MainPageActivity extends AppCompatActivity {
         });
         database.collection("sets/categories/descatalogados")
                 .get()
-                .addOnCompleteListener(task ->  {
-                    if(task.isSuccessful()) {
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
                         List<DocumentSnapshot> documents = task.getResult().getDocuments();
                         List<Product> retiredSets = new ArrayList<>();
                         for (DocumentSnapshot document : documents) {
@@ -87,6 +89,7 @@ public class MainPageActivity extends AppCompatActivity {
         });
 
     }
+
     public void changeProfileView(View view) {
         startActivity(new Intent(MainPageActivity.this, ProfileActivity.class));
     }
@@ -99,8 +102,8 @@ public class MainPageActivity extends AppCompatActivity {
     public void loadNewSets(List<Product> products) {
         LayoutInflater inflater = LayoutInflater.from(this);
 
-        for(Product product : products) {
-            View sets_card = inflater.inflate(R.layout.sets_card, legoContainerNew, false );
+        for (Product product : products) {
+            View sets_card = inflater.inflate(R.layout.sets_card, legoContainerNew, false);
             ImageView setImage = sets_card.findViewById(R.id.setImage);
             TextView setName = sets_card.findViewById(R.id.tvSetName);
             TextView setPrice = sets_card.findViewById(R.id.tvSetPrice);
@@ -109,16 +112,14 @@ public class MainPageActivity extends AppCompatActivity {
                     .load(product.getImage())
                     .into(setImage);
 
-            Log.d("Description",product.getDescription());
-
             setName.setText(product.getName());
-            setPrice.setText(String.format("%.2f €" , product.getPrize()));
+            setPrice.setText(String.format("%.2f €", product.getPrize()));
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
             );
             int margin = getResources().getDimensionPixelSize(R.dimen.product_card_margin);
-            params.setMargins(margin,margin,margin,margin);
+            params.setMargins(margin, margin, margin, margin);
             sets_card.setLayoutParams(params);
 
             legoContainerNew.addView(sets_card);
@@ -136,29 +137,31 @@ public class MainPageActivity extends AppCompatActivity {
             });
         }
     }
+
     @SuppressLint("DefaultLocale")
     public void loadRetiredSets(List<Product> products) {
         LayoutInflater inflater = LayoutInflater.from(this);
 
-        for(Product product : products) {
-            View sets_card = inflater.inflate(R.layout.sets_card, legoContainerRetired, false );
+        for (Product product : products) {
+            View sets_card = inflater.inflate(R.layout.sets_card, legoContainerRetired, false);
 
             ImageView setImage = sets_card.findViewById(R.id.setImage);
             TextView setName = sets_card.findViewById(R.id.tvSetName);
             TextView setPrice = sets_card.findViewById(R.id.tvSetPrice);
 
+            // A partir de aqui se hacen los setters en el horizontal layout
             Glide.with(this)
                     .load(product.getImage())
                     .into(setImage);
 
             setName.setText(product.getName());
-            setPrice.setText(String.format("%.2f €" , product.getPrize()));
+            setPrice.setText(String.format("%.2f €", product.getPrize()));
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
             );
             int margin = getResources().getDimensionPixelSize(R.dimen.product_card_margin);
-            params.setMargins(margin,margin,margin,margin);
+            params.setMargins(margin, margin, margin, margin);
             sets_card.setLayoutParams(params);
 
             legoContainerRetired.addView(sets_card);
@@ -175,5 +178,16 @@ public class MainPageActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    public void viewMoreNewSets(View view) {
+        Intent intent = new Intent(MainPageActivity.this, InventoryActivity.class);
+        Intent id = intent.putExtra("viewMoreNewSetsId", 1);
+        startActivity(intent);
+    }
+    public void viewMoreRetiredSets(View view) {
+        Intent intent = new Intent(MainPageActivity.this, InventoryActivity.class);
+        Intent id = intent.putExtra("viewMoreRetiredSetsId", 2);
+        startActivity(intent);
     }
 }

@@ -27,6 +27,15 @@
             android:layout_marginStart="10dp"
             android:textSize="40sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/viewMoreNewSets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="330dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="viewMoreNewSets"
+            android:text="View more ->" />
         <HorizontalScrollView
             android:layout_width="401dp"
             android:layout_height="219dp"
@@ -49,11 +58,21 @@
             android:layout_marginStart="10dp"
             android:textSize="40sp"
             android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/viewMoreRetiredSets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="330dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="viewMoreRetiredSets"
+            android:text="View more ->" />
         <HorizontalScrollView
             android:layout_width="401dp"
             android:layout_height="219dp"
             android:background="#ffffff"
-            android:backgroundTint="#ffffff">
+            android:backgroundTint="#ffffff"
+            android:layout_marginBottom="20dp">
 
             <LinearLayout
                 android:id="@+id/legoContainerRetired"
