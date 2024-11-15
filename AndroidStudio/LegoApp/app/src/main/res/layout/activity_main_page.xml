@@ -31,12 +31,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#11a3a1">
+
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="630dp"
                     android:layout_marginTop="63dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/bannerlegomain">
+
                 </ImageView>
 
                 <androidx.appcompat.widget.Toolbar

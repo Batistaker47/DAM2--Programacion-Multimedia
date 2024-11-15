@@ -2,7 +2,9 @@ package com.example.legoapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -38,7 +41,6 @@ public class LogInActivity extends AppCompatActivity {
 
     public void logIn(View view) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
-        //Map<String, Object> values = new HashMap<>();
         TextView nickname = findViewById(R.id.editTextNicknameSignIn);
         TextView password = findViewById(R.id.editTextPasswordSignIn);
 
@@ -59,7 +61,7 @@ public class LogInActivity extends AppCompatActivity {
                                     // && database.collection("users").document("password").toString().equals(password.getText().toString())
                                     if (doc.getId().equals(nickname.getText().toString()) && doc.get("password").toString().equals(password.getText().toString())) {
                                         // Si existe y la contraseña coincide
-                                        String email = doc.get("email").toString();
+                                        //String email = doc.get("email").toString();
                                         userCheck = true;
                                         //createLocalRegistry(email,nickname.getText().toString(),password.getText().toString());
                                         Toast.makeText(LogInActivity.this, "Welcome back, " + nickname.getText().toString() + "!", Toast.LENGTH_LONG).show();
@@ -79,4 +81,48 @@ public class LogInActivity extends AppCompatActivity {
             }
     }
 
+   /* public void forgotPassword(View view) {
+        EditText userName = findViewById(R.id.editTextNicknameSignIn);
+        // Consulta en Firebase para obtener el documento del usuario por su correo electrónico
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("users")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            String email = "";
+                            boolean userCheck = false;
+                                for (QueryDocumentSnapshot document : task.getResult()) {
+                                    if (document.getId().equals(userName.getText().toString())) {
+                                        email = document.getString("email");
+                                        Log.d("email",email);
+                                            // Usuario encontrado y el correo electrónico coincide
+                                            userCheck = true;
+                                            Toast.makeText(LogInActivity.this, "Correo enviado", Toast.LENGTH_SHORT).show();
+                                            break;
+                                    }
+                                }
+                            if (userCheck) {
+
+                                FirebaseAuth auth = FirebaseAuth.getInstance();
+                                auth.sendPasswordResetEmail(email)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()) {
+                                            Toast.makeText(LogInActivity.this, "REVISA TU CORREO PARA CAMBIAR LA CONTRASEÑA", Toast.LENGTH_SHORT).show();
+                                        } else {
+                                            Toast.makeText(LogInActivity.this, "ERROOOOOOOOOOOR", Toast.LENGTH_SHORT).show();
+
+                                        }
+                                    }
+                                });
+                            }
+                        } else {
+                            // Error en la consulta
+                        }
+                    }
+                });
+    }*/
 }
