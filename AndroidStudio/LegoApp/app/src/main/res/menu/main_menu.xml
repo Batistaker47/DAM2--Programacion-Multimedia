@@ -11,19 +11,11 @@
             android:title="All sets"
             android:icon="@drawable/lego_piece">
         </item>
-        <item
-            android:id="@+id/nav_categories"
-            android:title="Categories"
-            android:icon="@drawable/lego_piece">
-        </item>
-
     </group>
-
-    <group android:checkableBehavior="single">
-
         <item
             android:title="Profile">
             <menu>
+                <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/nav_profile"
                     android:title="User profile"
@@ -39,8 +31,8 @@
                     android:title="Register"
                     android:icon="@drawable/app_registration_logo">
                 </item>
+                </group>
             </menu>
         </item>
-    </group>
 
 </menu>

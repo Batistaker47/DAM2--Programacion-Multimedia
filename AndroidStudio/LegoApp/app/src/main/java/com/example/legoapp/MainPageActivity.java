@@ -7,36 +7,63 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.DialogFragment;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainPageActivity extends AppCompatActivity {
+public class MainPageActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private LinearLayout legoContainerNew;
     private LinearLayout legoContainerRetired;
+
+    private DrawerLayout drawerLayout;
+
+    private NavigationView navigationView;
+    private Toolbar tool_bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main_page);
+
+        drawerLayout = findViewById(R.id.main);
+        navigationView = findViewById(R.id.navigationView);
+        tool_bar = findViewById(R.id.tool_bar);
+
+        // TOOL BAR SETTINGS
+        setSupportActionBar(tool_bar);
+
+        // NAV MENU
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toogle = new ActionBarDrawerToggle(this, drawerLayout, tool_bar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toogle);
+        toogle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(this);
+
 
         legoContainerNew = findViewById(R.id.legoContainerNew);
         legoContainerRetired = findViewById(R.id.legoContainerRetired);
@@ -192,5 +219,11 @@ public class MainPageActivity extends AppCompatActivity {
         Intent intent = new Intent(MainPageActivity.this, InventoryActivity.class);
         Intent id = intent.putExtra("viewMoreRetiredSetsId", 2);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        return true;
     }
 }
