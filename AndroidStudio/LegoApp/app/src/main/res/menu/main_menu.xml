@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home"
+            android:icon="@drawable/home_icon">
+        </item>
+        <item
+            android:id="@+id/nav_sets"
+            android:title="All sets"
+            android:icon="@drawable/lego_piece">
+        </item>
+        <item
+            android:id="@+id/nav_categories"
+            android:title="Categories"
+            android:icon="@drawable/lego_piece">
+        </item>
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:title="Profile">
+            <menu>
+                <item
+                    android:id="@+id/nav_profile"
+                    android:title="User profile"
+                    android:icon="@drawable/profile_icon">
+                </item>
+                <item
+                    android:id="@+id/nav_login"
+                    android:title="Log In"
+                    android:icon="@drawable/login_icon">
+                </item>
+                <item
+                    android:id="@+id/nav_register"
+                    android:title="Register"
+                    android:icon="@drawable/app_registration_logo">
+                </item>
+            </menu>
+        </item>
+    </group>
+
+</menu>

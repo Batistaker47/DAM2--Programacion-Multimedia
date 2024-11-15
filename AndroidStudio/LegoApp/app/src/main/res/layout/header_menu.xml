@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:orientation="vertical"
+    android:background="@drawable/menu"
+    android:gravity="bottom"
+    android:padding="20dp">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/pngtree_kids_lego_head_brick_building_png_image_5248793">
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:background="@color/black"
+        android:fontFamily="@font/baloo"
+        android:padding="5dp"
+        android:text="LegoApp"
+        android:textColor="@color/lego_yellow"
+        android:textSize="24sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:fontFamily="@font/baloo"
+        android:padding="5dp"
+        android:text="Creator's Github: batistaker47"
+        android:textColor="@color/lego_yellow"
+        android:textSize="11sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+
+</LinearLayout>
