@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,6 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
+import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -57,6 +59,10 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
         setSupportActionBar(tool_bar);
 
         // NAV MENU
+        // HIDE ELEMENTS IN THE NAVIGATION MENU
+        //Menu menu = navigationView.getMenu();
+        //menu.findItem(R.id.nav_profile).setVisible(false);
+
         navigationView.bringToFront();
         ActionBarDrawerToggle toogle = new ActionBarDrawerToggle(this, drawerLayout, tool_bar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toogle);
@@ -114,10 +120,6 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
             return insets;
         });
 
-    }
-
-    public void changeProfileView(View view) {
-        startActivity(new Intent(MainPageActivity.this, ProfileActivity.class));
     }
 
     public void changeLogInView(View view) {
@@ -223,6 +225,27 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        int itemId = menuItem.getItemId();
+
+        if (itemId == R.id.nav_home) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+        } else if(itemId == R.id.nav_sets) {
+            viewMoreNewSets(MainPageActivity.this.getCurrentFocus());
+
+        } else if(itemId == R.id.nav_profile) {
+            Intent intent = new Intent(MainPageActivity.this, ProfileActivity.class);
+            startActivity(intent);
+
+        } else if(itemId == R.id.nav_login) {
+            Intent intent = new Intent(MainPageActivity.this, LogInActivity.class);
+            startActivity(intent);
+        }
+
+        else if(itemId == R.id.nav_register) {
+            Intent intent = new Intent(MainPageActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        }
 
         return true;
     }
