@@ -25,7 +25,6 @@
         android:textColor="@color/lego_yellow"
         android:textSize="24sp"
         android:textStyle="bold">
-
     </TextView>
 
     <TextView
@@ -38,7 +37,6 @@
         android:textColor="@color/lego_yellow"
         android:textSize="11sp"
         android:textStyle="bold">
-
     </TextView>
 
 
