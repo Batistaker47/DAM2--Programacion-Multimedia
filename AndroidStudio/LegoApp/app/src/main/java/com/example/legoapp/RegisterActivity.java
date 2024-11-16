@@ -84,7 +84,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 if (!userCheck) {
                                         Toast.makeText(RegisterActivity.this,"User Created",Toast.LENGTH_LONG).show();
                                         database.collection("users").document(nickname.getText().toString()).set(values);
-                                        startActivity(new Intent(RegisterActivity.this, MainPageActivity.class));
+                                        startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
                                 }
                             } else {
                                 //No va el internet/bbdd caída (no me traigo datos)

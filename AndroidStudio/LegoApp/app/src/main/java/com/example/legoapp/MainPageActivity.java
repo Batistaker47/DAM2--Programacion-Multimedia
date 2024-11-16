@@ -60,8 +60,8 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
 
         // NAV MENU
         // HIDE ELEMENTS IN THE NAVIGATION MENU
-        //Menu menu = navigationView.getMenu();
-        //menu.findItem(R.id.nav_profile).setVisible(false);
+        Menu menu = navigationView.getMenu();
+        menu.findItem(R.id.nav_register).setVisible(false);
 
         navigationView.bringToFront();
         ActionBarDrawerToggle toogle = new ActionBarDrawerToggle(this, drawerLayout, tool_bar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);

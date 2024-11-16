@@ -58,13 +58,12 @@ public class LogInActivity extends AppCompatActivity {
                                 // Por cada documento en el task (todos los datos del documento)
                                 boolean userCheck = false;
                                 for (QueryDocumentSnapshot doc : task.getResult()) {
-                                    // && database.collection("users").document("password").toString().equals(password.getText().toString())
                                     if (doc.getId().equals(nickname.getText().toString()) && doc.get("password").toString().equals(password.getText().toString())) {
                                         // Si existe y la contraseña coincide
-                                        //String email = doc.get("email").toString();
+                                        Singleton.getInstance().setCurrentUser(doc.getId());
                                         userCheck = true;
-                                        //createLocalRegistry(email,nickname.getText().toString(),password.getText().toString());
-                                        Toast.makeText(LogInActivity.this, "Welcome back, " + nickname.getText().toString() + "!", Toast.LENGTH_LONG).show();
+
+                                        Toast.makeText(LogInActivity.this, "Welcome, " + nickname.getText().toString() + "!", Toast.LENGTH_LONG).show();
                                         startActivity(new Intent(LogInActivity.this, MainPageActivity.class));
                                         break;
                                     }
@@ -73,8 +72,6 @@ public class LogInActivity extends AppCompatActivity {
                                 if (!userCheck) {
                                     Toast.makeText(LogInActivity.this, "Wrong user or password", Toast.LENGTH_LONG).show();
                                 }
-                            } else {
-                                //No va el internet/bbdd caída (no me traigo datos)
                             }
                         }
                     });

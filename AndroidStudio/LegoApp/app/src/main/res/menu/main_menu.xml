@@ -23,8 +23,8 @@
                 </item>
                 <item
                     android:id="@+id/nav_login"
-                    android:title="Log In"
-                    android:icon="@drawable/login_icon">
+                    android:title="Log out"
+                    android:icon="@drawable/logout_icon">
                 </item>
                 <item
                     android:id="@+id/nav_register"
