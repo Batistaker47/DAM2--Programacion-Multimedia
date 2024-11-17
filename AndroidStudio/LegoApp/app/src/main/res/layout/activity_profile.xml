@@ -62,40 +62,44 @@
             android:id="@+id/inventory_icon"
             android:layout_width="51dp"
             android:layout_height="48dp"
-            android:src="@drawable/inventory_icon"
-            android:layout_margin="5dp"/>
+            android:layout_margin="5dp"
+            android:onClick="showInventorySets"
+            android:src="@drawable/inventory_icon" />
 
         <TextView
             android:id="@+id/inventory_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Your Inventory"
-            android:fontFamily="@font/baloo"
-            android:textSize="30sp"
+            android:layout_margin="5dp"
             android:layout_toEndOf="@+id/inventory_icon"
-            android:layout_margin="5dp"/>
+            android:fontFamily="@font/baloo"
+            android:onClick="showInventorySets"
+            android:text="Your Inventory"
+            android:textSize="30sp" />
 
         <ImageView
             android:id="@+id/wishlist_icon"
             android:layout_width="51dp"
             android:layout_height="48dp"
-            android:src="@drawable/wishlist_icon"
             android:layout_below="@id/inventory_icon"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"/>
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="5dp"
+            android:onClick="showWishlistSets"
+            android:src="@drawable/wishlist_icon" />
 
         <TextView
             android:id="@+id/wishlist_text"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
-            android:text="Wishlist"
-            android:fontFamily="@font/baloo"
-            android:textSize="30sp"
             android:layout_below="@id/inventory_text"
-            android:layout_toEndOf="@id/wishlist_icon"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="5dp"/>
+            android:layout_toEndOf="@id/wishlist_icon"
+            android:fontFamily="@font/baloo"
+            android:onClick="showWishlistSets"
+            android:text="Wishlist"
+            android:textSize="30sp" />
 
         <ImageView
             android:id="@+id/share_icon"
