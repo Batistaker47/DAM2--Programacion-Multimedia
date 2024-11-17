@@ -6,16 +6,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SetDetailActivity extends AppCompatActivity {
+
+    private String currentUser;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -23,6 +35,9 @@ public class SetDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_set_detail);
+
+
+        currentUser = Singleton.getInstance().getCurrentUser();
 
         TextView tvSetNameDetail = findViewById(R.id.tvSetNameDetail);
         TextView tvSetPrizeDetail = findViewById(R.id.tvSetPrizeDetail);
@@ -56,6 +71,98 @@ public class SetDetailActivity extends AppCompatActivity {
 
     public void changeToMainView(View view) {
         startActivity(new Intent(SetDetailActivity.this, MainPageActivity.class));
+    }
+
+    public void addToInventory(View view) {
+
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        Map<String, Object> values = new HashMap<>();
+
+        TextView tvSetNameDetail = findViewById(R.id.tvSetNameDetail);
+        TextView tvSetPrizeDetail = findViewById(R.id.tvSetPrizeDetail);
+        TextView tvSetPiecesDetail = findViewById(R.id.tvSetPiecesDetail);
+        TextView tvSetDescription = findViewById(R.id.tvSetDescriptionDetail);
+        ImageView imageSetDetail = findViewById(R.id.imageSetDetail);
+
+        values.put("name",tvSetNameDetail.getText().toString());
+        values.put("prize",tvSetPrizeDetail.getText().toString());
+        values.put("pieces",tvSetPiecesDetail.getText().toString());
+        values.put("description",tvSetDescription.getText().toString());
+
+        database.collection("users").document(currentUser).collection("mySets")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            // Me traigo bien los datos, va bien el internet
+                            // Por cada documento en el task (todos los datos del documento)
+                            boolean flag = false;
+                            for (QueryDocumentSnapshot doc : task.getResult()) {
+                                if (doc.getId().equals(tvSetNameDetail.getText().toString())) {
+                                    // Si ya existe el set en la colección
+                                    flag = true;
+                                    Toast.makeText(SetDetailActivity.this,"You already own this set!",Toast.LENGTH_LONG).show();
+                                    break;
+                                }
+                            }
+
+                            if (!flag) {
+                                Toast.makeText(SetDetailActivity.this,"Set added succesfully!",Toast.LENGTH_LONG).show();
+                                database.collection("users").document(currentUser).collection("mySets").add(values);
+                            }
+                        } else {
+                            //No va el internet/bbdd caída (no me traigo datos)
+                        }
+                    }
+                });
+
+    }
+
+    public void addToWishlist(View view) {
+
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        Map<String, Object> values = new HashMap<>();
+
+        TextView tvSetNameDetail = findViewById(R.id.tvSetNameDetail);
+        TextView tvSetPrizeDetail = findViewById(R.id.tvSetPrizeDetail);
+        TextView tvSetPiecesDetail = findViewById(R.id.tvSetPiecesDetail);
+        TextView tvSetDescription = findViewById(R.id.tvSetDescriptionDetail);
+        ImageView imageSetDetail = findViewById(R.id.imageSetDetail);
+
+        values.put("name",tvSetNameDetail.getText().toString());
+        values.put("prize",tvSetPrizeDetail.getText());
+        values.put("pieces",tvSetPiecesDetail.getText().toString());
+        values.put("description",tvSetDescription.getText().toString());
+
+        database.collection("users").document(currentUser).collection("wishlistSets")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            // Me traigo bien los datos, va bien el internet
+                            // Por cada documento en el task (todos los datos del documento)
+                            boolean flag = false;
+                            for (QueryDocumentSnapshot doc : task.getResult()) {
+                                if (doc.getId().equals(tvSetNameDetail.getText().toString())) {
+                                    // Si ya existe el set en la colección
+                                    flag = true;
+                                    Toast.makeText(SetDetailActivity.this,"You already add this set to the wishlist!",Toast.LENGTH_LONG).show();
+                                    break;
+                                }
+                            }
+
+                            if (!flag) {
+                                Toast.makeText(SetDetailActivity.this,"Set added succesfully!",Toast.LENGTH_LONG).show();
+                                database.collection("users").document(currentUser).collection("wishlistSets").add(values);
+                            }
+                        } else {
+                            //No va el internet/bbdd caída (no me traigo datos)
+                        }
+                    }
+                });
+
     }
 
 }

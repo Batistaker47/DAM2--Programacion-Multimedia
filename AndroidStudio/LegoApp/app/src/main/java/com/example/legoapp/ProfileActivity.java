@@ -46,4 +46,8 @@ public class ProfileActivity extends AppCompatActivity {
         startActivity(new Intent(ProfileActivity.this, MainPageActivity.class));
 
     }
+
+    public void showInventorySets() {
+
+    }
 }

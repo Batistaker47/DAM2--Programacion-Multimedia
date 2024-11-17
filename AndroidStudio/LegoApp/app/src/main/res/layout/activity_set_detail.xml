@@ -18,20 +18,25 @@
         android:backgroundTint="#FFFFFF"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="31sp"
-            android:layout_height="34sp"
-            android:onClick="changeToMainView"
-            app:srcCompat="@drawable/flecha_izquierda">
-
-        </ImageView>
-
-        <ImageView
-            android:id="@+id/imageSetDetail"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="260dp"
-            android:layout_marginTop="30dp"
-            android:scaleType="fitCenter" />
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="31sp"
+                android:layout_height="34sp"
+                android:onClick="changeToMainView"
+                app:srcCompat="@drawable/flecha_izquierda">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/imageSetDetail"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginTop="30dp"
+                android:scaleType="fitCenter" />
+        </RelativeLayout>
+
 
         <TextView
             android:id="@+id/tvSetNameDetail"
@@ -86,6 +91,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <Button
                 android:id="@+id/buttonAddSetToInventory"
                 android:layout_width="160dp"
@@ -93,6 +99,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#FFCF00"
+                android:onClick="addToInventory"
                 android:text="Add to inventory"
                 android:textColor="@color/black"
                 android:textStyle="bold">
@@ -103,9 +110,10 @@
                 android:id="@+id/buttonAddSetToWishlist"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/buttonAddSetToInventory"
+                android:layout_centerHorizontal="true"
                 android:backgroundTint="#FFCF00"
+                android:onClick="addToWishlist"
                 android:text="Add to wishlist"
                 android:textColor="@color/black"
                 android:textStyle="bold">
