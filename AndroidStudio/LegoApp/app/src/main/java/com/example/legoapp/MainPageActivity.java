@@ -2,6 +2,7 @@ package com.example.legoapp;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -27,6 +28,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -229,9 +231,6 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
         if (itemId == R.id.nav_home) {
             drawerLayout.closeDrawer(GravityCompat.START);
 
-        } else if(itemId == R.id.nav_sets) {
-            viewMoreNewSets(MainPageActivity.this.getCurrentFocus());
-
         } else if(itemId == R.id.nav_profile) {
             Intent intent = new Intent(MainPageActivity.this, ProfileActivity.class);
             startActivity(intent);
@@ -243,6 +242,12 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
 
         else if(itemId == R.id.nav_register) {
             Intent intent = new Intent(MainPageActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        }
+        else if(itemId == R.id.nav_prueba) {
+            String url = "https://www.lego.com/es-es";
+            Uri link = Uri.parse(url);
+            Intent intent = new Intent(Intent.ACTION_VIEW,link);
             startActivity(intent);
         }
 

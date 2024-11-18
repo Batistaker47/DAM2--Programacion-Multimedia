@@ -7,9 +7,9 @@
             android:icon="@drawable/home_icon">
         </item>
         <item
-            android:id="@+id/nav_sets"
-            android:title="All sets"
-            android:icon="@drawable/lego_piece">
+            android:id="@+id/nav_prueba"
+            android:title="Oficial website"
+            android:icon="@drawable/website_icon">
         </item>
     </group>
         <item

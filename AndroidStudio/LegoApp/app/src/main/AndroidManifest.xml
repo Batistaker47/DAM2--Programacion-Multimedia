@@ -16,16 +16,7 @@
             android:name=".InventoryActivity"
             android:exported="false" />
         <activity
-            android:name=".ConfirmarCompraActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CarritoActivity"
-            android:exported="false" />
-        <activity
             android:name=".SetDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DataBaseAux"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"
@@ -37,9 +28,6 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainPageActivity"
-            android:exported="false" />
-        <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar">
@@ -48,6 +36,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainPageActivity"
+            android:exported="false">
         </activity>
     </application>
 
