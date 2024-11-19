@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/main">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/backgroundinventory"
+        android:alpha="0.8"
+        android:scaleType="centerCrop">
+    </ImageView>
+    <ImageView
+        android:id="@+id/goBacktoProfile"
+        android:layout_width="31sp"
+        android:layout_height="34sp"
+        android:src="@drawable/flecha_izquierda"
+        android:layout_margin="10sp"
+        android:onClick="changeProfileView">
+    </ImageView>
+    <TextView
+        android:layout_toEndOf="@+id/goBacktoProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your wishlist sets"
+        android:layout_margin="10sp"
+        android:fontFamily="@font/baloo"
+        android:textSize="30sp"
+        android:textColor="#000000">
+    </TextView>
+
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/goBacktoProfile"
+        android:layout_margin="20dp">
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutshowDBWish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"/>
+    </ScrollView>
+</RelativeLayout>

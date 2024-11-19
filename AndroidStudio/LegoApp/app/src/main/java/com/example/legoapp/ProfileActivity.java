@@ -51,40 +51,12 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     public void showInventorySets(View view) {
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-        database.collection("users/" + currentUser + "/mySets")
-                .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        List<DocumentSnapshot> documents = task.getResult().getDocuments();
-                        List<String> setsList = new ArrayList<>();
-                        for (DocumentSnapshot document : documents) {
-                            String setName = document.get("name").toString();
-                            if (setName!= null) {
-                                setsList.add(setName);
-                            }
-                        }
-                        Toast.makeText(ProfileActivity.this, "OK", Toast.LENGTH_LONG).show();
-                    }
-                });
+        Intent intent = new Intent(this, OwnedSetsActivity.class);
+        startActivity(intent);
     }
 
     public void showWishlistSets(View view) {
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-        database.collection("users/" + currentUser + "/wishlistSets")
-                .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        List<DocumentSnapshot> documents = task.getResult().getDocuments();
-                        List<String> setsList = new ArrayList<>();
-                        for (DocumentSnapshot document : documents) {
-                            String setName = document.get("name").toString();
-                            if (setName!= null) {
-                                setsList.add(setName);
-                            }
-                        }
-                        Toast.makeText(ProfileActivity.this, "OK", Toast.LENGTH_LONG).show();
-                    }
-                });
+        Intent intent = new Intent(this, WishlistSetsActivity.class);
+        startActivity(intent);
     }
 }
