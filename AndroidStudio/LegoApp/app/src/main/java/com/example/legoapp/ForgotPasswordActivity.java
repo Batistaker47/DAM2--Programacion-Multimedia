@@ -19,34 +19,43 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-public class LogInActivity extends AppCompatActivity {
+import java.util.HashMap;
+import java.util.Map;
+
+public class ForgotPasswordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_forgot_password);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
     }
-    public void changeToRegisterView(View view) {
-        startActivity(new Intent(LogInActivity.this, RegisterActivity.class));
-    }
-    public void changeToForgotPasswordView(View view) {
-        startActivity(new Intent(LogInActivity.this, ForgotPasswordActivity.class));
-    }
-
-    public void logIn(View view) {
+    public void changePassword(View view) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
-        TextView nickname = findViewById(R.id.editTextNicknameSignIn);
-        TextView password = findViewById(R.id.editTextPasswordSignIn);
+        Map<String, Object> values = new HashMap<>();
+        TextView nickname = findViewById(R.id.editTextNicknameFP);
+        TextView oldPassword = findViewById(R.id.editTextOldPassword);
+        TextView newPassword = findViewById(R.id.editTextNewPasswordFP);
+        TextView email = findViewById(R.id.editTextEmailFP);
 
-        if (password.getText().toString().isEmpty() || nickname.getText().toString().isEmpty()) {
-            Toast.makeText(LogInActivity.this, "Complete all the fields", Toast.LENGTH_LONG).show();
-        } else {
+        if (
+                email.getText().toString().isEmpty() ||
+                oldPassword.getText().toString().isEmpty() ||
+                newPassword.getText().toString().isEmpty() ||
+                nickname.getText().toString().isEmpty())
+        {
+            Toast.makeText(ForgotPasswordActivity.this, "Complete all the fields", Toast.LENGTH_LONG).show();
+
+        }  else {
+            values.put("nickname",nickname.getText().toString());
+            values.put("password",newPassword.getText().toString());
+            values.put("email",email.getText().toString());
+
 
             database.collection("users")
                     .get()
@@ -58,23 +67,24 @@ public class LogInActivity extends AppCompatActivity {
                                 // Por cada documento en el task (todos los datos del documento)
                                 boolean userCheck = false;
                                 for (QueryDocumentSnapshot doc : task.getResult()) {
-                                    if (doc.getId().equals(nickname.getText().toString()) && doc.get("password").toString().equals(password.getText().toString())) {
+                                    if (doc.getId().equals(nickname.getText().toString()) && doc.get("password").toString().equals(oldPassword.getText().toString())) {
                                         // Si existe y la contraseña coincide
-                                        Singleton.getInstance().setCurrentUser(doc.getId());
                                         userCheck = true;
-
-                                        Toast.makeText(LogInActivity.this, "Welcome, " + nickname.getText().toString() + "!", Toast.LENGTH_LONG).show();
-                                        startActivity(new Intent(LogInActivity.this, MainPageActivity.class));
+                                        database.collection("users").document(nickname.getText().toString()).set(values);
+                                        Toast.makeText(ForgotPasswordActivity.this, "Password successfully changed!", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(ForgotPasswordActivity.this, LogInActivity.class));
                                         break;
                                     }
                                 }
 
                                 if (!userCheck) {
-                                    Toast.makeText(LogInActivity.this, "Wrong user or password", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(ForgotPasswordActivity.this, "Wrong user or password", Toast.LENGTH_LONG).show();
+
+
                                 }
                             }
                         }
                     });
-            }
+        }
     }
 }

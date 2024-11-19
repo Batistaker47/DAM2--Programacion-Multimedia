@@ -170,4 +170,9 @@ public class InventoryActivity extends AppCompatActivity {
             });
         }
     }
+
+    public  void changeToMainFromAllSets(View view) {
+        Intent intent = new Intent(InventoryActivity.this, MainPageActivity.class);
+        startActivity(intent);
+    }
 }

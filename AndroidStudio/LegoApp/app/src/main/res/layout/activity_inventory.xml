@@ -25,7 +25,7 @@
                     android:layout_height="34sp"
                     android:src="@drawable/flecha_izquierda"
                     android:layout_margin="14dp"
-                    android:onClick="changeToMainView">
+                    android:onClick="changeToMainFromAllSets">
                 </ImageView>
                 <TextView
                     android:layout_width="wrap_content"

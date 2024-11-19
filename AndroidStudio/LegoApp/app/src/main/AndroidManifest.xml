@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LegoApp"
         tools:targetApi="31">
         <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".WishlistSetsActivity"
             android:exported="false" />
         <activity
@@ -45,7 +48,7 @@
         </activity>
         <activity
             android:name=".MainPageActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>
