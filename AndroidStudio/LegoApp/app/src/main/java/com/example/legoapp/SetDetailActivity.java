@@ -37,14 +37,17 @@ public class SetDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_set_detail);
 
 
+        // GET THE CURRENT USER FROM SINGLETON
         currentUser = Singleton.getInstance().getCurrentUser();
 
+        // REFERENCE UI ELEMENTS FOR DISPLAYING SET DETAILS
         TextView tvSetNameDetail = findViewById(R.id.tvSetNameDetail);
         TextView tvSetPrizeDetail = findViewById(R.id.tvSetPrizeDetail);
         TextView tvSetPiecesDetail = findViewById(R.id.tvSetPiecesDetail);
         TextView tvSetDescription = findViewById(R.id.tvSetDescriptionDetail);
         ImageView imageSetDetail = findViewById(R.id.imageSetDetail);
 
+        // EXTRACT SET DETAILS FROM THE INTENT THAT LAUNCHED THIS ACTIVITY
         Intent intent = getIntent();
         String setName = intent.getStringExtra("setName");
         Double setPrice = intent.getDoubleExtra("setPrize",0);
@@ -68,11 +71,32 @@ public class SetDetailActivity extends AppCompatActivity {
         });
 
     }
-
+    /**
+     * Starts the MainPageActivity.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void changeToMainView(View view) {
         startActivity(new Intent(SetDetailActivity.this, MainPageActivity.class));
     }
 
+    /**
+     * Adds the currently viewed set to the user's inventory in FirebaseFirestore.
+     * Performs the following steps:
+     * 1. Retrieves set information from the detail view elements (name, price, pieces, description).
+     * 2. Creates a HashMap containing the set information.
+     * 3. Queries the "mySets" subcollection within the current user's document in FirebaseFirestore.
+     * 4. Checks if the set already exists in the user's inventory:
+     *    - For each document in the "mySets" collection, it compares the document ID (set name) with the current set name.
+     * 5. If the set doesn't exist:
+     *    - Saves the set information as a new document in the "mySets" subcollection.
+     *    - Displays a toast message indicating successful addition.
+     * 6. If the set already exists:
+     *    - Displays a toast message indicating the user already owns the set.
+     * 7. Handles potential errors during data retrieval from Firestore.
+     *
+     * @param view The View that triggered this method (e.g., the "Add to Inventory" button)
+     */
     public void addToInventory(View view) {
 
         FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -112,13 +136,29 @@ public class SetDetailActivity extends AppCompatActivity {
                                 database.collection("users").document(currentUser).collection("mySets").add(values);
                             }
                         } else {
-                            //No va el internet/bbdd caída (no me traigo datos)
                         }
                     }
                 });
 
     }
 
+    /**
+     * Adds the currently viewed set to the user's wishlist in FirebaseFirestore.
+     * Performs the following steps:
+     * 1. Retrieves set information from the detail view elements (name, price, pieces, description).
+     * 2. Creates a HashMap containing the set information.
+     * 3. Queries the "wishlistSets" subcollection within the current user's document in FirebaseFirestore.
+     * 4. Checks if the set already exists in the user's inventory:
+     *    - For each document in the "mySets" collection, it compares the document ID (set name) with the current set name.
+     * 5. If the set doesn't exist:
+     *    - Saves the set information as a new document in the "wishlistSets" subcollection.
+     *    - Displays a toast message indicating successful addition.
+     * 6. If the set already exists:
+     *    - Displays a toast message indicating the user already owns the set.
+     * 7. Handles potential errors during data retrieval from Firestore.
+     *
+     * @param view The View that triggered this method (e.g., the "Add to Inventory" button)
+     */
     public void addToWishlist(View view) {
 
         FirebaseFirestore database = FirebaseFirestore.getInstance();

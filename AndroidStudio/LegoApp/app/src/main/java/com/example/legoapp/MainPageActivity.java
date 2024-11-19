@@ -31,13 +31,20 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * The main activity of the application, displaying new and retired LEGO sets.
+ * Implements `NavigationView.OnNavigationItemSelectedListener` to handle navigation menu clicks.
+ */
 public class MainPageActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    // STORE THE CURRENT USER RETRIEVED FROM SINGLETON
     private String currentUser;
+
+    // LINEARLAYOUTS TO HOLD NEW AND RETIRED LEGO SETS
     private LinearLayout legoContainerNew;
     private LinearLayout legoContainerRetired;
 
+    // REFERENCE TO THE DRAWER LAYOUT AND NAVIGATION VIEW FOR NAVIGATION MENU
     private DrawerLayout drawerLayout;
 
 
@@ -47,8 +54,10 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main_page);
 
+        // GET THE CURRENT USER FROM SINGLETON
         currentUser = Singleton.getInstance().getCurrentUser();
 
+        // REFERENCES TO NAVIGATION VIEW, TOOLBAR, AND DRAWER LAYOUT
         NavigationView navigationView;
         Toolbar tool_bar;
 
@@ -56,26 +65,35 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
         navigationView = findViewById(R.id.navigationView);
         tool_bar = findViewById(R.id.tool_bar);
 
-        // TOOL BAR SETTINGS
+        // SET THE TOOLBAR AS THE ACTION BAR FOR THIS ACTIVITY
         setSupportActionBar(tool_bar);
 
-        // NAV MENU
-        // HIDE ELEMENTS IN THE NAVIGATION MENU
+        // NAVIGATION MENU CONFIGURATION
+        // HIDE THE "REGISTER" MENU ITEM AS IT'S NOT RELEVANT ON THE MAIN PAGE
         Menu menu = navigationView.getMenu();
         menu.findItem(R.id.nav_register).setVisible(false);
 
+        // BRING THE NAVIGATION VIEW TO FRONT FOR PROPER DISPLAY
         navigationView.bringToFront();
+
+        // SET UP THE HAMBURGER MENU TOGGLE FOR NAVIGATION DRAWER
         ActionBarDrawerToggle toogle = new ActionBarDrawerToggle(this, drawerLayout, tool_bar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toogle);
+
+        // SYNCHRONIZE THE TOGGLE STATE
         toogle.syncState();
 
+        // SET THIS ACTIVITY AS THE LISTENER FOR NAVIGATION MENU ITEM SELECTIONS
         navigationView.setNavigationItemSelectedListener(this);
 
-
+        // REFERENCES TO THE LINEARLAYOUTS FOR DISPLAYING SETS
         legoContainerNew = findViewById(R.id.legoContainerNew);
         legoContainerRetired = findViewById(R.id.legoContainerRetired);
 
+        // FIREBASESTORESTORE INSTANCE FOR FETCHING DATA
         FirebaseFirestore database = FirebaseFirestore.getInstance();
+
+        // LOAD NEW LEGO SETS FROM "STAR WARS" CATEGORY
         database.collection("sets/categories/Star Wars")
                 .get()
                 .addOnCompleteListener(task -> {
@@ -98,6 +116,8 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // LOAD RETIRED LEGO SETS FROM RETIRED CATEGORY
         database.collection("sets/categories/descatalogados")
                 .get()
                 .addOnCompleteListener(task -> {
@@ -122,11 +142,19 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
         });
 
     }
-
+    /**
+     * Changes the current activity to the login page.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void changeLogInView(View view) {
         startActivity(new Intent(MainPageActivity.this, LogInActivity.class));
     }
-
+    /**
+     * Loads a list of new LEGO sets into the horizontal scroll view .
+     *
+     * @param products The list of LEGO set products to display.
+     */
     @SuppressLint("DefaultLocale")
     public void loadNewSets(List<Product> products) {
         LayoutInflater inflater = LayoutInflater.from(this);
@@ -168,7 +196,11 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
             });
         }
     }
-
+    /**
+     * Loads a list of retired LEGO sets into the horizontal scroll view .
+     *
+     * @param products The list of LEGO set products to display.
+     */
     @SuppressLint("DefaultLocale")
     public void loadRetiredSets(List<Product> products) {
         LayoutInflater inflater = LayoutInflater.from(this);
@@ -213,17 +245,35 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
         }
     }
 
+    /**
+     * Handles clicks on the "View More New Sets" button.
+     * Starts the InventoryActivity with an extra indicating to load new sets.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void viewMoreNewSets(View view) {
         Intent intent = new Intent(MainPageActivity.this, InventoryActivity.class);
         Intent id = intent.putExtra("viewMoreNewSetsId", 1);
         startActivity(intent);
     }
+    /**
+     * Handles clicks on the "View More Retired Sets" button.
+     * Starts the InventoryActivity with an extra indicating to load retired sets.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void viewMoreRetiredSets(View view) {
         Intent intent = new Intent(MainPageActivity.this, InventoryActivity.class);
         Intent id = intent.putExtra("viewMoreRetiredSetsId", 2);
         startActivity(intent);
     }
 
+    /**
+     * Handles clicks on navigation menu items.
+     *
+     * @param menuItem The selected menu item.
+     * @return true to consume the navigation event, false otherwise.
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int itemId = menuItem.getItemId();

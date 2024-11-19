@@ -35,11 +35,35 @@ public class RegisterActivity extends AppCompatActivity {
             return insets;
         });
     }
+    /**
+     * Changes the current activity to the login page.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void changeLogInView(View view) {
         startActivity(new Intent(RegisterActivity.this, LogInActivity.class));
     }
-
-    //ADD TO FIREBASE DDBB
+    /**
+     * Handles user signup process upon clicking the "Sign Up" button.
+     * Performs the following steps:
+     * 1. Retrieves user input from nickname, email, password, and confirm password fields.
+     * 2. Validates user input:
+     *    - Checks for empty fields.
+     *    - Checks if password and confirm password match.
+     * 3. If validation passes:
+     *    - Creates a HashMap containing user information (nickname, email, password).
+     *    - Queries the "users" collection in FirebaseFirestore to check for an existing user with the chosen nickname.
+     *    - If the nickname doesn't exist:
+     *        - Saves the user information as a new document in the "users" collection.
+     *        - Displays a toast message indicating successful signup.
+     *        - Starts the LoginActivity.
+     *    - If the nickname already exists:
+     *        - Displays a toast message indicating the user already exists.
+     * 4. If validation fails:
+     *    - Displays appropriate toast messages based on the validation error (empty fields or password mismatch).
+     *
+     * @param view The View that triggered this method (e.g., the "Sign Up" button)
+     */
     public void signUp(View view) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         Map<String, Object> values = new HashMap<>();

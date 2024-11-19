@@ -23,10 +23,14 @@ public class SplashActivity extends AppCompatActivity {
             return insets;
         });
 
+        // DELAY THE TRANSITION TO THE LogInActivity FOR 3 SECONDS
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                // CREATE AN INTENT TO START THE LogInActivity
                 Intent intent = new Intent(SplashActivity.this,LogInActivity.class);
+
+                // STAR THE LogInActivity AND FINISH THE CURRENT SPLASH ACTIVITY
                 startActivity(intent);
                 finish();
             }

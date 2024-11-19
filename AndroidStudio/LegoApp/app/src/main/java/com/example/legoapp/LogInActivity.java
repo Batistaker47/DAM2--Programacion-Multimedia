@@ -32,38 +32,65 @@ public class LogInActivity extends AppCompatActivity {
             return insets;
         });
     }
+    /**
+     * Changes the current activity to the register page.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void changeToRegisterView(View view) {
         startActivity(new Intent(LogInActivity.this, RegisterActivity.class));
     }
+    /**
+     * Changes the current activity to the forgot password page.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void changeToForgotPasswordView(View view) {
         startActivity(new Intent(LogInActivity.this, ForgotPasswordActivity.class));
     }
-
+    /**
+     * Log the user in the main application
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void logIn(View view) {
+        // GET AN INSTANCE OF THE FIREBASE FIRESTORE DATABASE
         FirebaseFirestore database = FirebaseFirestore.getInstance();
+
+        // GET REFERENCES TO THE EDIT TEXTS IN THE LAYOUT
         TextView nickname = findViewById(R.id.editTextNicknameSignIn);
         TextView password = findViewById(R.id.editTextPasswordSignIn);
 
+        // CHECK IF ANY FIELD IS EMPTY
         if (password.getText().toString().isEmpty() || nickname.getText().toString().isEmpty()) {
             Toast.makeText(LogInActivity.this, "Complete all the fields", Toast.LENGTH_LONG).show();
         } else {
 
+            // GET ALL USERS FROM THE "USERS" COLLECTION
             database.collection("users")
                     .get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
                             if (task.isSuccessful()) {
-                                // Me traigo bien los datos, va bien el internet
-                                // Por cada documento en el task (todos los datos del documento)
+                                // SUCCESSFUL DATA RETRIEVAL
+                                // FLAG TO CHECK IF USER IS FOUND
                                 boolean userCheck = false;
+                                // LOOP THROUGH EACH USER DOCUMENT
                                 for (QueryDocumentSnapshot doc : task.getResult()) {
-                                    if (doc.getId().equals(nickname.getText().toString()) && doc.get("password").toString().equals(password.getText().toString())) {
-                                        // Si existe y la contraseña coincide
+
+                                    if (    // CHECK IF NICKNAME AND PASSWORD MATCH
+                                            doc.getId().equals(nickname.getText().toString()) &&
+                                            doc.get("password").toString().equals(password.getText().toString()))
+                                    {
+
+                                        // GET THE CURRENT USER WITH SINGLETON INSTANCE
                                         Singleton.getInstance().setCurrentUser(doc.getId());
                                         userCheck = true;
 
                                         Toast.makeText(LogInActivity.this, "Welcome, " + nickname.getText().toString() + "!", Toast.LENGTH_LONG).show();
+
+                                        // CHANGE TO MAINPAGE
                                         startActivity(new Intent(LogInActivity.this, MainPageActivity.class));
                                         break;
                                     }

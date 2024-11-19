@@ -42,6 +42,10 @@ public class OwnedSetsActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Loads the user's inventory from FirebaseFirestore.
+     * Retrieves a list of set names from the "mySets" collection and displays them in a TextView within a LinearLayout.
+     */
     public void loadInventory() {
         LinearLayout ly = findViewById(R.id.LinearLayoutshowDB);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -59,6 +63,11 @@ public class OwnedSetsActivity extends AppCompatActivity {
                     }
                 });
     }
+    /**
+     * Starts the ProfileActivity when the a button is clicked.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void changeProfileView(View view) {
         startActivity(new Intent(OwnedSetsActivity.this, ProfileActivity.class));
 

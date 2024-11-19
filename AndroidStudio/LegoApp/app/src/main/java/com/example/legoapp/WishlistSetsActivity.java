@@ -37,6 +37,12 @@ public class WishlistSetsActivity extends AppCompatActivity {
             return insets;
         });
     }
+    /**
+     * Loads the user's wishlist from FirebaseFirestore and displays them in a TextView within a LinearLayout.
+     * Retrieves a list of set names from the "wishlistSets" subcollection within the current user's document and displays them.
+     *
+     * @throws NullPointerException if the current user is not set
+     */
     public void loadWishlist() {
         LinearLayout ly = findViewById(R.id.LinearLayoutshowDBWish);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -54,6 +60,11 @@ public class WishlistSetsActivity extends AppCompatActivity {
                     }
                 });
     }
+    /**
+     * Changes the current activity to the user profile page.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void changeProfileView(View view) {
         startActivity(new Intent(WishlistSetsActivity.this, ProfileActivity.class));
 

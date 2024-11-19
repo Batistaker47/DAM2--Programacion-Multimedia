@@ -39,22 +39,39 @@ public class ProfileActivity extends AppCompatActivity {
             return insets;
         });
     }
+    /**
+     * Starts the LogInActivity and displays a toast message indicating successful logout.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void changeLogInView(View view) {
         startActivity(new Intent(ProfileActivity.this, LogInActivity.class));
         Toast.makeText(ProfileActivity.this, "Log out succesfull!", Toast.LENGTH_LONG).show();
 
     }
-
+    /**
+     * Starts the MainPageActivity.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void changeMainPageView(View view) {
         startActivity(new Intent(ProfileActivity.this, MainPageActivity.class));
 
     }
-
+    /**
+     * Starts the OwnedSetsActivity to display the user's owned sets.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void showInventorySets(View view) {
         Intent intent = new Intent(this, OwnedSetsActivity.class);
         startActivity(intent);
     }
-
+    /**
+     * Starts the WishlistSetsActivity to display the user's wishlist.
+     *
+     * @param view The View that triggered this method (e.g., a button click)
+     */
     public void showWishlistSets(View view) {
         Intent intent = new Intent(this, WishlistSetsActivity.class);
         startActivity(intent);
