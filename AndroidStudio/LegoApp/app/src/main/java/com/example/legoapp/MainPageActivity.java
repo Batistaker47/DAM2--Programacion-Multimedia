@@ -286,11 +286,13 @@ public class MainPageActivity extends AppCompatActivity implements NavigationVie
             startActivity(intent);
 
         } else if(itemId == R.id.nav_login) {
-            Intent intent = new Intent(MainPageActivity.this, LogInActivity.class);
-            startActivity(intent);
-        }
+            // LAMBDA FUNCTION!!!
+            View.OnClickListener onClickListener = view -> {
+                Intent intent = new Intent(MainPageActivity.this, LogInActivity.class);
+                startActivity(intent);
+            };
 
-        else if(itemId == R.id.nav_register) {
+        } else if(itemId == R.id.nav_register) {
             Intent intent = new Intent(MainPageActivity.this, RegisterActivity.class);
             startActivity(intent);
         }
