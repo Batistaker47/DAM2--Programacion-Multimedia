@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 direction;
     private Vector2 initialPosition;
+    public AudioClip bounceAudioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,9 @@ public class Ball : MonoBehaviour
     // collision es el objeto con el que te has chocado
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // MUSICA CADA VEZ QUE CHOQUE CON LO QUE SEA
+        AudioManager.instance.enabled = true;
+        AudioManager.instance.PlayAudio(bounceAudioClip, "Boing");
         // Cada vez que ocurre una collision CON LA PALA, la bola rebota
 
         if (collision.gameObject.GetComponent<StickMovement>())
