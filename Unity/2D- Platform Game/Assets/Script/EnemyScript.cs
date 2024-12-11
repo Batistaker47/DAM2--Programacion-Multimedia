@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public GameObject John;
+    private Animator animator;
     public AudioClip audioClipDeath;
     private float LastShoot;
     public GameObject bulletPrefab;
@@ -13,7 +14,7 @@ public class EnemyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
