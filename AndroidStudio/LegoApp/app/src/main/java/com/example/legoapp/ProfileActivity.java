@@ -56,7 +56,6 @@ public class ProfileActivity extends AppCompatActivity {
      */
     public void changeMainPageView(View view) {
         startActivity(new Intent(ProfileActivity.this, MainPageActivity.class));
-
     }
     /**
      * Starts the OwnedSetsActivity to display the user's owned sets.
