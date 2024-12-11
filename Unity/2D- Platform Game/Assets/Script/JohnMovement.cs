@@ -91,7 +91,7 @@ public class JohnMovement : MonoBehaviour
     public void Hit()
     {
         health -= 1;
-        Debug.Log(((uint)health));
+        //Debug.Log(((uint)health));
         if (health == 0)
         {
             AudioManager.instance.enabled = true;

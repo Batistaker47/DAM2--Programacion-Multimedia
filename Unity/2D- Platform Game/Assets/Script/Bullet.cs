@@ -42,10 +42,8 @@ public class Bullet : MonoBehaviour
          else if (enemy != null)
         {
             enemy.Hit();
-        } else
-        {
-            DestroyBullet();
         }
+        DestroyBullet();
         
     }
 }

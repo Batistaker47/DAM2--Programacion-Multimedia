@@ -7107,6 +7107,7 @@ MonoBehaviour:
   audioClipDeath: {fileID: 8300000, guid: 22cef58a804ec2c47a4eeba0276e0ab4, type: 3}
   bulletPrefab: {fileID: 1766716267587745252, guid: 39bbe9b688cd23b4396d9a6ed6c5031c, type: 3}
   health: 1
+  IsDead: 0
 --- !u!70 &797327551
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -8294,6 +8295,7 @@ MonoBehaviour:
   audioClipDeath: {fileID: 8300000, guid: 22cef58a804ec2c47a4eeba0276e0ab4, type: 3}
   bulletPrefab: {fileID: 1766716267587745252, guid: 39bbe9b688cd23b4396d9a6ed6c5031c, type: 3}
   health: 1
+  IsDead: 1
 --- !u!1 &1569711728
 GameObject:
   m_ObjectHideFlags: 0
@@ -8915,6 +8917,7 @@ MonoBehaviour:
   audioClipDeath: {fileID: 8300000, guid: 22cef58a804ec2c47a4eeba0276e0ab4, type: 3}
   bulletPrefab: {fileID: 1766716267587745252, guid: 39bbe9b688cd23b4396d9a6ed6c5031c, type: 3}
   health: 1
+  IsDead: 0
 --- !u!70 &2036004226
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
