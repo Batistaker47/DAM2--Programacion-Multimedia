@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,784 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pixelSF_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 442
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e402e964931486840a5e6c1cf7c1cb8a
+      internalID: 998956984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_1
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 442
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d3f8885259b4146bef9ec73b5c5ec4
+      internalID: -1752191387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 442
+        width: 54
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbdfb12ee2908b43871788d541fa117
+      internalID: 1600128102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_3
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 442
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6b4759af1f8fa4dbbb75e35ce111be
+      internalID: -1902425471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_4
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 442
+        width: 44
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e88eff9f6a0de4290cf0fe2beca34e
+      internalID: -1014051414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_5
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 442
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3385108cbc5e96442b8333396155cc9c
+      internalID: 1511986448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_6
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 442
+        width: 58
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c3078fe853db9469e3361dc21dc57b
+      internalID: -1557498978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_7
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 442
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c498c5c9789cbe4f99357411c68712e
+      internalID: -335618107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 354
+        width: 70
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6a986e123c60d449ac72b4b9a7f125
+      internalID: -928809849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_9
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 354
+        width: 50
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9944ad9d6ba26044bc96540debc6297
+      internalID: -902599672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_10
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 354
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7db868c68f9c544b816cb8bafa6556
+      internalID: -1762708267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_11
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 354
+        width: 40
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480f30701bbc1294b8a8fdc0c285aacd
+      internalID: -542297362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_12
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 354
+        width: 46
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91de0ac669969f498e7f21a40e7bc69
+      internalID: -743459701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_13
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 354
+        width: 36
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a5d9bd3d0ed5a48a17f339407510ae
+      internalID: -5643832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_14
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 354
+        width: 62
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a9997511adc69e40bedc72654b07dea
+      internalID: -237762268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_15
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 354
+        width: 44
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6f34f116973eb45989299e082ade0d
+      internalID: 539023731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_16
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 260
+        width: 44
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50111de828afca742bcb6ae4345c740c
+      internalID: -1396087406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_17
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 260
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451525d289174834289af98a51f79ada
+      internalID: 1423317187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_18
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 260
+        width: 52
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6dc8013e41981b4498600c7e1c9942a
+      internalID: -1440391018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_19
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 260
+        width: 52
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44ab1f4f8bdcf24cb503a69205f35a7
+      internalID: -761572274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_20
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 260
+        width: 58
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2da124f86944b664988b33deb14961eb
+      internalID: 1950850650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_21
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 260
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b853012cf750ac841afd48f541acc960
+      internalID: -1159597879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_22
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 260
+        width: 54
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f554b30d91a5ea048bab9036736298b2
+      internalID: -109526779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_23
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 260
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac12a4cf70e1a354497ee13895f6121e
+      internalID: -517827512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_24
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 184
+        width: 36
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa9378bd9521d464b896f7ef3d375e8f
+      internalID: 840475254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_25
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 184
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294f1c92d6f2d14408bac88c1269f472
+      internalID: -1947670722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_26
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 184
+        width: 38
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ce0b451a43178e4f9d621ce8479729d
+      internalID: 361654994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_27
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 184
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5af4383cc29ba241bfc2f5161f40724
+      internalID: -14649187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_28
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 184
+        width: 54
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7859996a1f14e144bae9e9330aedb5e
+      internalID: 1457917083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_29
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 86
+        width: 80
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f8bca943713fa4ba72569c151ccd3d
+      internalID: -345055757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_30
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 86
+        width: 52
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ab9ebd69ab7d544b1b21bbcd30d560
+      internalID: -793601210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_31
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 86
+        width: 36
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9c973dc5729124a836657ee67a062d
+      internalID: 851321067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_32
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 86
+        width: 72
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa541a868305af4468450f62ecec721d
+      internalID: 115866763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_33
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 68
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31bd01fa3b5d7c4da3645b50add5e4e
+      internalID: -230125224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_34
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 0
+        width: 40
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2d0abf160deeb744a8b9088cb029be4
+      internalID: -1964269416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_35
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 0
+        width: 62
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f50c9768aef39640b5de8450f728d0e
+      internalID: 1076205104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixelSF_36
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 0
+        width: 40
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80e681d6be7a1c4ca1b0c37abba05b7
+      internalID: 1423739526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +922,44 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pixelSF_0: 998956984
+      pixelSF_1: -1752191387
+      pixelSF_10: -1762708267
+      pixelSF_11: -542297362
+      pixelSF_12: -743459701
+      pixelSF_13: -5643832
+      pixelSF_14: -237762268
+      pixelSF_15: 539023731
+      pixelSF_16: -1396087406
+      pixelSF_17: 1423317187
+      pixelSF_18: -1440391018
+      pixelSF_19: -761572274
+      pixelSF_2: 1600128102
+      pixelSF_20: 1950850650
+      pixelSF_21: -1159597879
+      pixelSF_22: -109526779
+      pixelSF_23: -517827512
+      pixelSF_24: 840475254
+      pixelSF_25: -1947670722
+      pixelSF_26: 361654994
+      pixelSF_27: -14649187
+      pixelSF_28: 1457917083
+      pixelSF_29: -345055757
+      pixelSF_3: -1902425471
+      pixelSF_30: -793601210
+      pixelSF_31: 851321067
+      pixelSF_32: 115866763
+      pixelSF_33: -230125224
+      pixelSF_34: -1964269416
+      pixelSF_35: 1076205104
+      pixelSF_36: 1423739526
+      pixelSF_4: -1014051414
+      pixelSF_5: 1511986448
+      pixelSF_6: -1557498978
+      pixelSF_7: -335618107
+      pixelSF_8: -928809849
+      pixelSF_9: -902599672
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -19,12 +19,24 @@ public class StickMovement : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    // Update is called once per frame.
     void Update()
     {
-        y = Input.GetAxis(axisName);
-        transform.Translate(new Vector2 (0,y) * speed * Time.deltaTime);
-        //Esto sería para que al chocar la bola con la pala no nos la mueva en el eje Y
+        // THIS ONLY WORKS ON PC
+        //y = Input.GetAxis(axisName);
+        //transform.Translate(new Vector2 (0,y) * speed * Time.deltaTime);
+        
+        foreach (Touch touch in Input.touches)
+        {
+            if(touch.phase == TouchPhase.Moved)
+            {
+                //touch.position
+                transform.position = new Vector3(transform.position.x , touch.position.y, transform.position.z);
+            }else if (touch.phase == TouchPhase.Ended)
+            {
+                GetComponent<SpriteRenderer>().color = new Color(Random.Range(0,1f), Random.Range(0,1f),Random.Range(0,1f), 1f);
+            }
+        }
     }
 
     private void FixedUpdate()
