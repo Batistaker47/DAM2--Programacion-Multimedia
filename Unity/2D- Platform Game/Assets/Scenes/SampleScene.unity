@@ -7064,7 +7064,6 @@ GameObject:
   m_Component:
   - component: {fileID: 616894735}
   - component: {fileID: 616894736}
-  - component: {fileID: 616894737}
   m_Layer: 0
   m_Name: jungle_bg_trees (1)
   m_TagString: Untagged
@@ -7139,27 +7138,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &616894737
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616894734}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a5525e1cb7675c14b89c11cc786cf59c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &719343957
 GameObject:
   m_ObjectHideFlags: 0
@@ -7281,7 +7259,6 @@ MonoBehaviour:
   audioClipDeath: {fileID: 8300000, guid: 22cef58a804ec2c47a4eeba0276e0ab4, type: 3}
   bulletPrefab: {fileID: 1766716267587745252, guid: 39bbe9b688cd23b4396d9a6ed6c5031c, type: 3}
   health: 1
-  IsDead: 0
 --- !u!70 &797327551
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -7600,7 +7577,7 @@ MonoBehaviour:
   speed: 1
   jumpforce: 150
   axisName: Horizontal
-  health: 100
+  health: 2
 --- !u!95 &838034883
 Animator:
   serializedVersion: 5
@@ -8469,7 +8446,6 @@ MonoBehaviour:
   audioClipDeath: {fileID: 8300000, guid: 22cef58a804ec2c47a4eeba0276e0ab4, type: 3}
   bulletPrefab: {fileID: 1766716267587745252, guid: 39bbe9b688cd23b4396d9a6ed6c5031c, type: 3}
   health: 1
-  IsDead: 1
 --- !u!1 &1569711728
 GameObject:
   m_ObjectHideFlags: 0
@@ -9091,7 +9067,6 @@ MonoBehaviour:
   audioClipDeath: {fileID: 8300000, guid: 22cef58a804ec2c47a4eeba0276e0ab4, type: 3}
   bulletPrefab: {fileID: 1766716267587745252, guid: 39bbe9b688cd23b4396d9a6ed6c5031c, type: 3}
   health: 1
-  IsDead: 0
 --- !u!70 &2036004226
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

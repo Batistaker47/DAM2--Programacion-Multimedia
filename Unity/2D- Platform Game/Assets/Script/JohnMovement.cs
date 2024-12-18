@@ -28,7 +28,7 @@ public class JohnMovement : MonoBehaviour
     void Update()
     {
         // MOVEMOS A RAMBO
-       x = Input.GetAxis(axisName);
+        x = Input.GetAxis(axisName);
        transform.Translate(new Vector2(x, 0) * speed * Time.deltaTime);
 
         // LO PONEMOS A MIRAR A LA IZQUIERDA O A LA DERECHA EN FUNCION DE LA TECLA DE DESPLAZAMIENTO
@@ -94,10 +94,16 @@ public class JohnMovement : MonoBehaviour
         //Debug.Log(((uint)health));
         if (health == 0)
         {
+            animator.SetBool("isDead", true);
             AudioManager.instance.enabled = true;
             AudioManager.instance.PlayAudio(audioClipDeath, "DeathSound");
-            Destroy(gameObject);
+            
         }
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 
     private void FixedUpdate()
