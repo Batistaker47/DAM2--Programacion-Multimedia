@@ -10,7 +10,7 @@ public class EnemyScript : MonoBehaviour
     private float LastShoot;
     public GameObject bulletPrefab;
     public int health = 3;
-    public bool IsDead;
+    private bool IsDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +41,7 @@ public class EnemyScript : MonoBehaviour
 
         float distance = Mathf.Abs(John.transform.position.x - transform.position.x);
 
-        if (distance < 1.0f && Time.time > LastShoot + 0.75f)
+        if (distance < 1.0f && Time.time > LastShoot + 0.75f && !IsDead)
         {
             Shoot();
             LastShoot = Time.time;
@@ -68,12 +68,16 @@ public class EnemyScript : MonoBehaviour
         health = health - 1;
         if (health == 0)
         {
-            IsDead = false;
+            IsDead = true;
             animator.SetBool("IsDead", IsDead);
             AudioManager.instance.enabled = true;
             AudioManager.instance.PlayAudio(audioClipDeath, "DeathEnemySound");
-            Destroy(gameObject);
-
+            //Destroy(gameObject);
         }
+    }
+
+    public void Death()
+    {
+        Destroy(gameObject);
     }
 }

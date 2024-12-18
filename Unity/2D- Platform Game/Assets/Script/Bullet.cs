@@ -38,12 +38,13 @@ public class Bullet : MonoBehaviour
         if (john != null)
         {
             john.Hit();
+            DestroyBullet();
         }
-         else if (enemy != null)
+        else if (enemy != null)
         {
             enemy.Hit();
+            DestroyBullet();
         }
-        DestroyBullet();
-        
+
     }
 }
