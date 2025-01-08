@@ -7,7 +7,8 @@ public class Bullet : MonoBehaviour
     public AudioClip audioClip;
     private Rigidbody2D rb2d;
     private Vector2 direction;
-    public float speed;
+    public float speed, timeAlive;
+    private float currentTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,14 @@ public class Bullet : MonoBehaviour
         Camera.main.GetComponent<AudioSource>().PlayOneShot(audioClip);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
+    {
+        currentTime += Time.deltaTime;
+
+    }
+
+    // FixedUpdate is called once per frame
+    void FixedUpdate()
     {
         rb2d.velocity = direction * speed;
     }
@@ -44,6 +51,11 @@ public class Bullet : MonoBehaviour
         {
             enemy.Hit();
             DestroyBullet();
+
+        } else if (currentTime >= timeAlive)
+        {
+            currentTime = 0;
+            Destroy(gameObject);
         }
 
     }
