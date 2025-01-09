@@ -5,152 +5,172 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="5"
     android:background="@drawable/profileimg">
 
-    <ImageView
-        android:layout_width="31dp"
-        android:layout_height="34dp"
-        android:layout_gravity="start"
-        android:layout_margin="10dp"
-        android:src="@drawable/flecha_izquierda"
-        android:onClick="changeMainPageView">
-
-    </ImageView>
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/pngtree_kids_lego_head_brick_building_png_image_5248793"
-        android:layout_gravity="center">
-    </ImageView>
-
-    <TextView
-        android:id="@+id/tvProfileUserName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:background="@drawable/rounded_textview"
-        android:fontFamily="@font/baloo"
-        android:layout_gravity="center"
-        android:padding="5dp"
-        android:text="LegoApp"
-        android:textColor="@color/lego_yellow"
-        android:textSize="24sp"
-        android:textStyle="bold">
-    </TextView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/black"
-        android:fontFamily="@font/baloo"
-        android:layout_gravity="center"
-        android:padding="5dp"
-        android:text="Welcome to your personal space!"
-        android:textColor="@color/lego_yellow"
-        android:textSize="11sp"
-        android:textStyle="bold">
-    </TextView>
-
-    <RelativeLayout
-        android:layout_width="300dp"
-        android:layout_height="400dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:paddingStart="10dp">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:orientation="vertical">
         <ImageView
-            android:id="@+id/inventory_icon"
-            android:layout_width="51dp"
-            android:layout_height="48dp"
-            android:layout_margin="5dp"
-            android:onClick="showInventorySets"
-            android:src="@drawable/inventory_icon" />
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:layout_gravity="start"
+            android:layout_margin="10dp"
+            android:src="@drawable/flecha_izquierda"
+            android:onClick="changeMainPageView">
+
+        </ImageView>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/pngtree_kids_lego_head_brick_building_png_image_5248793"
+            android:layout_gravity="center">
+        </ImageView>
 
         <TextView
-            android:id="@+id/inventory_text"
+            android:id="@+id/tvProfileUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_toEndOf="@+id/inventory_icon"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/rounded_textview"
             android:fontFamily="@font/baloo"
-            android:onClick="showInventorySets"
-            android:text="Your Inventory"
-            android:textSize="30sp" />
-
-        <ImageView
-            android:id="@+id/wishlist_icon"
-            android:layout_width="51dp"
-            android:layout_height="48dp"
-            android:layout_below="@id/inventory_icon"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="5dp"
-            android:onClick="showWishlistSets"
-            android:src="@drawable/wishlist_icon" />
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:text="LegoApp"
+            android:textColor="@color/lego_yellow"
+            android:textSize="24sp"
+            android:textStyle="bold">
+        </TextView>
 
         <TextView
-            android:id="@+id/wishlist_text"
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_below="@id/inventory_text"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="20dp"
-            android:layout_toEndOf="@id/wishlist_icon"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
             android:fontFamily="@font/baloo"
-            android:onClick="showWishlistSets"
-            android:text="Wishlist"
-            android:textSize="30sp" />
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:text="Welcome to your personal space!"
+            android:textColor="@color/lego_yellow"
+            android:textSize="11sp"
+            android:textStyle="bold">
+        </TextView>
 
-        <ImageView
-            android:id="@+id/share_icon"
-            android:layout_width="51dp"
-            android:layout_height="48dp"
-            android:src="@drawable/share_icon"
-            android:layout_below="@id/wishlist_icon"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"/>
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:paddingStart="10dp">
 
-        <TextView
-            android:id="@+id/share_text"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:text="Share profile"
-            android:fontFamily="@font/baloo"
-            android:textSize="30sp"
-            android:layout_below="@id/wishlist_text"
-            android:layout_toEndOf="@id/share_icon"
-            android:layout_marginTop="22dp"
-            android:layout_marginStart="5dp"/>
+            <ImageView
+                android:id="@+id/inventory_icon"
+                android:layout_width="51dp"
+                android:layout_height="48dp"
+                android:layout_margin="5dp"
+                android:onClick="showInventorySets"
+                android:src="@drawable/inventory_icon" />
 
-        <ImageView
-            android:id="@+id/logout_icon"
-            android:layout_width="51dp"
-            android:layout_height="48dp"
-            android:src="@drawable/logout_icon"
-            android:layout_below="@id/share_icon"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:onClick="changeLogInView"/>
+            <TextView
+                android:id="@+id/inventory_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toEndOf="@+id/inventory_icon"
+                android:fontFamily="@font/baloo"
+                android:onClick="showInventorySets"
+                android:text="Your Inventory"
+                android:textSize="30sp" />
 
-        <TextView
-            android:id="@+id/logout_text"
-            android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:text="Log out"
-            android:fontFamily="@font/baloo"
-            android:textSize="30sp"
-            android:layout_below="@id/share_text"
-            android:layout_toEndOf="@id/logout_icon"
-            android:layout_marginTop="24dp"
-            android:layout_marginStart="5dp"
-            android:onClick="changeLogInView"/>
+            <ImageView
+                android:id="@+id/wishlist_icon"
+                android:layout_width="51dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/inventory_icon"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                android:onClick="showWishlistSets"
+                android:src="@drawable/wishlist_icon" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/wishlist_text"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_below="@id/inventory_text"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@id/wishlist_icon"
+                android:fontFamily="@font/baloo"
+                android:onClick="showWishlistSets"
+                android:text="Wishlist"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:id="@+id/share_icon"
+                android:layout_width="51dp"
+                android:layout_height="48dp"
+                android:src="@drawable/share_icon"
+                android:layout_below="@id/wishlist_icon"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"/>
+
+            <TextView
+                android:id="@+id/share_text"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:text="Share profile"
+                android:fontFamily="@font/baloo"
+                android:textSize="30sp"
+                android:layout_below="@id/wishlist_text"
+                android:layout_toEndOf="@id/share_icon"
+                android:layout_marginTop="22dp"
+                android:layout_marginStart="5dp"/>
+
+            <ImageView
+                android:id="@+id/logout_icon"
+                android:layout_width="51dp"
+                android:layout_height="48dp"
+                android:src="@drawable/logout_icon"
+                android:layout_below="@id/share_icon"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:onClick="changeLogInView"/>
+
+            <TextView
+                android:id="@+id/logout_text"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:text="Log out"
+                android:fontFamily="@font/baloo"
+                android:textSize="30sp"
+                android:layout_below="@id/share_text"
+                android:layout_toEndOf="@id/logout_icon"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="5dp"
+                android:onClick="changeLogInView"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+<!--
 
 </LinearLayout>
+
+-->
+
+
+
+
+
+
+
+
+
 <!--<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
