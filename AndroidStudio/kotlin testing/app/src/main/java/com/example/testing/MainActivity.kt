@@ -14,12 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnChangeAct = findViewById<Button>(R.id.goNext)
-        btnChangeAct.setOnClickListener {
-            val intent = Intent(this, Test::class.java)
-            startActivity(intent)
-        }
-
+        changeView()
         val swDarkMode = findViewById<SwitchMaterial>(R.id.swDarkMode)
 
         swDarkMode.setOnCheckedChangeListener { _, isSelected ->
@@ -32,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun enableDarkMode(){
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
         delegate.applyDayNight()
     }
 
@@ -40,4 +35,15 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
         delegate.applyDayNight()
     }
+
+    // region OnClickListeners
+    private fun changeView(){
+        val btnChangeAct = findViewById<Button>(R.id.goNext)
+        btnChangeAct.setOnClickListener {
+            val intent = Intent(this, Test::class.java)
+            startActivity(intent)
+        }
+    }
+
+    // endregion
 }
