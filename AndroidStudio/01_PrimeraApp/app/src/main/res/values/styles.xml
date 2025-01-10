@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="bordesRedonditos" parent="TextAppearance.AppCompat">
+        <item name="android:shape"> rectangle </item>
         <item name="android:textColor">#BBAA124F</item>
         <item name="strokeWidth">3dp</item>
         <item name="android:background">#00FFFF</item>

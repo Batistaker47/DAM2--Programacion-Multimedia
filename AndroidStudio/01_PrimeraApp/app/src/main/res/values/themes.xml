@@ -15,4 +15,15 @@
     <style name="Theme._01PrimeraApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme._01PrimeraApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="LMbuttonGradient" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/lm_button_gradient_drawable</item>
+        <item name="backgroundTint">@null</item>
+        <item name="backgroundTintMode">@null</item>
+    </style>
+    <style name="DMbuttonGradient" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/dm_button_gradient_drawable</item>
+        <item name="backgroundTint">@null</item>
+        <item name="backgroundTintMode">@null</item>
+    </style>
 </resources>
